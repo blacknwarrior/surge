@@ -88,11 +88,6 @@ nf_rating_season.js = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ft
 #hostname = %INSERT% api.bilibili.com
 BiliBili_HD = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=true,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
 
-#!name=Tweetbot
-#!desc=解锁pro
-#hostname = %APPEND% *.tapbots.com
-Tweetbot = type=http-response,pattern=https://push.tapbots.com/tweetbot/5/verify_subscription,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/arlocc/Profiles/main/Surge/Scripts/Tweetbot.js
-
 #!name=ColorWeather (@ Maasea)
 #!desc=ColorWeather Unlock(彩云天气）
 #hostname = %APPEND% biz.caiyunapp.com
