@@ -32,11 +32,6 @@ Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https:/
 #hostname = mp.weixin.qq.com
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
 
-#!name=TestFlight账户管理 (@ NobyDa)
-#!desc=自动存储/合并多个TestFlight账户列表, 并可导出/分享TestFlight APP.
-#hostname = %APPEND% testflight.apple.com
-#TestFlight账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js
-
 #!name=Bili_Auto_Regions (@ NobyDa)
 #!desc=Bilibli 番剧自动切换地区 & 显示豆瓣评分
 #hostname = ap?.bili*i.com, ap?.bili*i.net
@@ -44,26 +39,6 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,m
 Bili Region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/v\d\/search\/defaultwords)\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
 #可选, 适用于搜索指定地区的番剧
 Bili Search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
-
-#!name=VSCO Vip (@ NobyDa)
-#!desc=VSCO 解锁高级特权
-#hostname = vsco.co, api.revenuecat.com
-http-response ^https:\/\/(api\.revenuecat\.com\/v\d\/subscribers|vsco\.co\/api\/subscriptions\/\d\.\d\/user-subscriptions)\/ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js
-
-#!name=PicsArt Pro (@ NobyDa)
-#!desc=PicsArt 解锁高级功能
-#hostname = api.picsart.c*, api.meiease.c*
-http-response https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js
-
-#!name=CamScanner Pro (@ NobyDa)
-#!desc=CamScanner解锁部分高级特权
-#hostname = ap*.intsig.net
-http-response https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
-
-#!name= Notability (@ yqc007)
-#!desc= Notability premium
-#hostname = notability.com
-http-response ^https:\/\/notability\.com\/subscriptions script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/NotabilityProCrack.js, request-body=true
 
 #!name=#Netflix评分 (@ yichahucha)
 #!desc=显示IMDb、douban评分 更新时间 2021-12-7 13:59
@@ -80,19 +55,13 @@ nf_rating_season.js = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ft
 财新周刊 = type=http-response,pattern=^https?:\/\/ipadcms\.caixin\.com\/(api|tmp|power)\/(articles?|myfree(v\d+)?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/CaiXinWeekly/Script/CaiXinWeekly.js,script-update-interval=0
 #财新
 #hostname = %APPEND% gateway.caixin.com
-#财新会员 = type=http-request,pattern=^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Crazy-Z7/Scrip/main/caixin.js,script-update-interval=0
-财新会员 = type=http-request,pattern=^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/arlocc/Profiles/main/Surge/Scripts/caixin.js,script-update-interval=0
+#财新会员 = type=http-request,pattern=^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/arlocc/Profiles/main/Surge/Scripts/caixin.js,script-update-interval=0
 
 #!name=Bilibili_Plus (@ yuhangrao)
 #!desc=解锁大会员画质
 #hostname = %INSERT% api.bilibili.com
 BiliBili_HD = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=true,script-path=https://github.com/Sunert/Script/raw/master/Script/Bilibili/BiliHD.js
 
-#!name=ColorWeather (@ Maasea)
-#!desc=ColorWeather Unlock(彩云天气）
-#hostname = %APPEND% biz.caiyunapp.com
-#Weather = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Weather/weather.js
-
 
 [MITM]
-hostname = %INSERT% *.wikipedia.org,*.wikiwand.com, app.biliintl.com, gab.122.gov.cn, sub.store, mp.weixin.qq.com, testflight.apple.com, ap?.bili*i.com, ap?.bili*i.net, vsco.co, api.revenuecat.com, api.picsart.c*, api.meiease.c*, ap*.intsig.net, notability.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, ipadcms.caixin.com, gateway.caixin.com, user.ftmailbox.cn, api.bilibili.com, *.tapbots.com, biz.caiyunapp.com
+hostname = %INSERT% *.wikipedia.org,*.wikiwand.com, app.biliintl.com, sub.store, mp.weixin.qq.com, ap?.bili*i.com, ap?.bili*i.net, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, ipadcms.caixin.com, gateway.caixin.com, api.bilibili.com
