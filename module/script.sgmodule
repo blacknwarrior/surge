@@ -2,10 +2,6 @@
 #!desc=Script Pack
 #!system=ios
 
-[General]
-force-http-engine-hosts = %APPEND% boxjs.com
-skip-proxy = %APPEND% iosapps.itunes.apple.com
-
 [URL Rewrite]
 #!name=Wikiwand(by DivineEngine)
 #!desc=Wikipedia to Wikiwand
