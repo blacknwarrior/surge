@@ -62,7 +62,7 @@ if (!v4.primaryAddress && !v6.primaryAddress) {
         (v6.primaryRouter && wifi.ssid ? `Router IPv6 : ${v6.primaryRouter}\n` : '') +
         `IP : ${info.query}\n` +
         `ISP : ${info.isp}\n` +
-        `${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city
+        `${getFlagEmoji(info.countryCode)}${info.country} - ${info.city
         }`,
       icon: wifi.ssid ? 'wifi' : 'simcard',
       'icon-color': wifi.ssid ? '#005CAF' : '#F9BF45',
