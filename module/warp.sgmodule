@@ -2,7 +2,7 @@
 #!desc=Hack Data WARP++
 
 [Panel]
-Warp++ = script-name=Warp++, title=Warp++, content="请刷新", update-interval=60
+Warp++ = script-name=Warp++referrer, title=Warp++referrer, content="请刷新", update-interval=60
 
 [Host]
 api.cloudflareclient.com = server: 1.1.1.1
