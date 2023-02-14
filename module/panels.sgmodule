@@ -27,7 +27,7 @@ functionstatus = type=generic, script-path=https://raw.githubusercontent.com/sma
 IP-Check = type=generic,timeout=3,script-path=https://blacknwarrior.github.io/surge/scripts/IP-Check.js
 
 # 机场信息, 必须修改的字段:你encode后的机场订阅链接
-Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/arlocc/Profiles/main/Surge/Scripts/sub_info_panel.js,script-update-interval=0
+Sub_info = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/sub_info_panel.js,script-update-interval=0
 
 # 流量统计 点击以切换网络界面
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/trafficstatistics.js,argument=icon=link.icloud,icon-color=#5AC8FA
