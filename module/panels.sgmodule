@@ -10,7 +10,7 @@ Sub_info = script-name=Sub_info,update-interval=43200
 
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
-net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
+#net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
 
 flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
@@ -33,7 +33,7 @@ Sub_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com
 TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/trafficstatistics.js,argument=icon=link.icloud,icon-color=#5AC8FA
 
 # 网络详情 标题显示为根节点名
-net-info-panel = script-path=https://raw.githubusercontent.com/ventusoon/ventus/main/Panel/Net-info-panel.js,type=generic,script-update-interval=0
+#net-info-panel = script-path=https://raw.githubusercontent.com/ventusoon/ventus/main/Panel/Net-info-panel.js,type=generic,script-update-interval=0
 
 # flushDNS
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#3d3d5b
