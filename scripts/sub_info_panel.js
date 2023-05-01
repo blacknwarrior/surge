@@ -46,7 +46,7 @@ Sub_info = script-name=Sub_info
   $done({
 	title:  sub_title+ " | 𝗥𝗲𝘀𝗲𝘁 : "+resetLeft+ " 𝗗𝗮𝘆𝘀 ",
 	content: body,
-        icon : $persistentStore.read("airport_icon") ||"bonjour",
+        icon : $persistentStore.read("airport_icon") ||"bonjour.circle",
         "icon-color" :$persistentStore.read("airport_color") || "#16A951"
 	});
 })();
