@@ -9,7 +9,7 @@ YJ = script-name=YJ,update-interval=43200
 YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/script/youjia.js,argument=guangdong
 */
 
-var region = 'shanxi-3/xian'
+var region = 'guangdong/guangzhou'
 
 if (typeof $argument !== 'undefined' && $argument !== '') {
     region = $argument
