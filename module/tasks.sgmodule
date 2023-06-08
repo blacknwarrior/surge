@@ -9,9 +9,9 @@ NASA每日一图 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarri
 Dark Sky = type=cron,cronexp=31 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/dark%20sky.js
 Dark Sky2 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/dark%20sky2.js
 Dark Sky Pro = type=cron,cronexp=417 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/darkskypro.js
-Weather Por = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/weather_pro.js
+Weather Por = type=cron,cronexp=40 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/weather_pro.js
 Weather Por2 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/weather_pro2.js
 每日壹句 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/oneSay.js
 色图 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/setu.js
-实时油价 = type=cron,cronexp=31 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
+实时油价 = type=cron,cronexp=40 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
 #Auto join TF = type=cron,cronexp=*/10 0-7 * * *,script-path=https://github.com/DecoAri/JavaScript/blob/main/Surge/Auto_join_TF.js?raw=true,wake-system=0,timeout=180
