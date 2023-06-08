@@ -8,7 +8,7 @@
  */
 
 const base = "USD"; // 基准货币，可以改成其他币种
-const digits = 5; // 保留几位有效数字
+const digits = 2; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
@@ -31,7 +31,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             if (key !== base && data.rates.hasOwnProperty(key)) {
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
-                if {
+                if (rate > 1) {
+                    line = `${target[1]} 1${source[0]}=${roundNumber(rate, digits)}${
+                        target[0]
+                    }\n`;
+                } else {
                     line = `${target[1]} 1${source[0]}=${roundNumber(rate, digits)}${
                         target[0]
                     }\n`;
