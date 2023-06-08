@@ -1,4 +1,4 @@
-var region = "shanxi-3/xian";
+var region = "guangdong/guangzhou";
 
 const loondq = $persistentStore.read("地区");
 
