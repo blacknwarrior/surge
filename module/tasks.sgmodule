@@ -4,7 +4,7 @@
 
 [Script]
 
-汇率监控 = type=cron,cronexp=54 08 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
+汇率监控 = type=cron,cronexp=57 08 * * *,script-path=hhttps://raw.githubusercontent.com/blacknwarrior/surge/main/scripts/exchange.js
 NASA每日一图 = type=cron,cronexp=47 08 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/nasapic.js
 Dark Sky = type=cron,cronexp=47 08 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/dark%20sky.js
 Dark Sky2 = type=cron,cronexp=47 08 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/dark%20sky2.js
