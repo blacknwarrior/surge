@@ -156,8 +156,8 @@ https://github.com/sazs34/TaskConfig#%E5%A4%A9%E6%B0%94
 
 
 const $ = new Env("查询油价");
-// 默认福建
-var region = $.getdata("地区") || "fujian";
+
+var region = $.getdata("地区") || "guangdong/foshan";
 
 const query_addr = `http://m.qiyoujiage.com/${region}.shtml`;
 
