@@ -14,4 +14,5 @@ Weather Por2 = type=cron,cronexp=47 10 * * *,script-path=https://blacknwarrior.g
 每日壹句 = type=cron,cronexp=22 11 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/oneSay.js
 色图 = type=cron,cronexp=39 14 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/setu.js
 今日油价 = type=cron,cronexp=17 22 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
+黑料不打烊 = type=cron,cronexp=25 22 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/hlbdy.js
 #Auto join TF = type=cron,cronexp=*/10 0-7 * * *,script-path=https://github.com/DecoAri/JavaScript/blob/main/Surge/Auto_join_TF.js?raw=true,wake-system=0,timeout=180
