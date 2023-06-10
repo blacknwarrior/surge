@@ -1,10 +1,10 @@
 {
-	"id": "iRingo.app.sub",
-	"name": " iRingo",
-	"author": "@VirgilClyne",
+	"id": "Surge.app.sub",
+	"name": "blacknwarrior脚本订阅",
+	"author": "@blacknwarrior",
 	"description": "解锁完整的 Apple功能和集成服务",
-	"icon": "https://avatars.githubusercontent.com/u/2111377?s=100&v=4",
-	"repo": "https://github.com/VirgilClyne/iRingo",
+	"icon": "https://avatars.githubusercontent.com/u/107193123?v=4",
+	"repo": "https://github.com/blacknwarrior/surge",
 	"apps": [
 		{
 			"id": "iRingo.Location",
