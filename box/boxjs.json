@@ -58,11 +58,11 @@
 			],
 			"author": "@Peng-YM",
 			"repo": "https://github.com/Peng-YM/QuanX",
+			"script": "https://github.com/arlocc/Profiles/blob/main/QuantumutlX/Scripts/caiyun.js"
 			"icons": [
 				"https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
 				"https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
-			],
-	      "script": "https://github.com/arlocc/Profiles/blob/main/QuantumutlX/Scripts/caiyun.js"
+			]
 		},
 		{
 			"id": "iRingo.Weather",
