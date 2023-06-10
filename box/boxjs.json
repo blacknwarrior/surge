@@ -2,329 +2,67 @@
 	"id": "Surge.app.sub",
 	"name": "blacknwarrior脚本订阅",
 	"author": "@blacknwarrior",
-	"description": "解锁完整的 Apple功能和集成服务",
+	"description": "该订阅兼容BoxJs以及QX Gallery",
 	"icon": "https://avatars.githubusercontent.com/u/107193123?v=4",
 	"repo": "https://github.com/blacknwarrior/surge",
 	"apps": [
 		{
-			"id": "iRingo.Location",
-			"name": "📍 定位 & 🗺️ 地图",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/📍-定位服务\">📍 定位服务</a>的使用说明进行配置",
-				"影响功能范围包括但不限于“地图”、“Apple News”、“指南针”等"
-			],
+			"id": "Caiyun",
+			"name": "彩云天气",
 			"keys": [
-				"@iRingo.Location.Settings",
-				"@iRingo.Location.Caches"
-			],
+				"@caiyun.token.caiyun",
+				"@caiyun.token.tencent",
+				"@caiyun.display_location",
+				"@caiyun.location.latitude",
+				"@caiyun.location.longitude",
+				"@caiyun.address"
 			"settings": [
 				{
-					"id": "@iRingo.Location.Settings.Switch",
-					"name": "总功能开关",
-					"val": true,
+					"id": "@caiyun.token.caiyun",
+					"name": "彩云天气API Token",
+					"val": null,
+					"type": "text",
+					"autoGrow": false,
+					"rows": 2,
+					"desc": "彩云天气的Token，可以自行申请或者前往频道获取"
+				},
+				{
+					"id": "@caiyun.token.tencent",
+					"name": "腾讯地图API Token",
+					"val": "AHEBZ-ASTWX-CIW4P-7TV7T-AWKLS-7CFWP",
+					"type": "text",
+					"rows": 1,
+					"desc": ""
+				},
+				{
+					"id": "@caiyun.display_location",
+					"name": "是否在日志中显示经纬度",
+					"val": false,
 					"type": "boolean",
-					"desc": "是否启用此APP修改"
+					"desc": ""
 				},
 				{
-					"id": "@iRingo.Location.Settings.PEP.GCC",
-					"name": "[地区检测]地理国家或地区代码",
-					"val": "US",
-					"type": "selects",
-					"desc": "要更改为的地区或国家，此选项影响Wi-Fi或有线网络下国家和地区检测的结果",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随地区检测结果）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
+					"id": "@caiyun.location.latitude",
+					"name": "纬度",
+					"val": null,
+					"type": "text",
+					"desc": "纬度，可以关闭MITM获取位置，手动设置"
 				},
 				{
-					"id": "@iRingo.Location.Settings.Geo_manifest.Dynamic.Config.Country_code.default",
-					"name": "[动态配置]资源清单的国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "要更改为的地区或国家，此选项影响“地图”整体配置内容，包括以下的地图功能与服务",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随地区检测结果）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Services.PlaceData",
-					"name": "[地点数据]数据源",
-					"val": "CN",
-					"type": "selects",
-					"desc": "地点数据的数据源，此选项影响公共指南，兴趣点(POI)与位置信息等功能",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（随[动态配置]版本自动选择）"
-						},
-						{
-							"key": "CN",
-							"label": "高德(国内:互动百科/大众点评/携程+国外:Yelp等/TomTom)"
-						},
-						{
-							"key": "XX",
-							"label": "Apple(国内:维基百科+国外:Yelp等/TomTom)"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Services.Directions",
-					"name": "[导航与ETA]数据源",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "导航与ETA服务的数据源，此选项影响导航与ETA(到达时间)等功能",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（随[动态配置]版本自动选择）"
-						},
-						{
-							"key": "CN",
-							"label": "高德(无国外数据)"
-						},
-						{
-							"key": "XX",
-							"label": "Apple(无国内数据)"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Services.Traffic",
-					"name": "[交通状况]数据源",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "交通状况服务的数据源，此选项影响交通状况与道路信息服务",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（随[动态配置]版本自动选择）"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Services.RAP",
-					"name": "[评分和照片]数据源",
-					"val": "XX",
-					"type": "selects",
-					"desc": "评分和照片服务的数据源，此选项影响评分和照片服务以及照片使用",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（随[动态配置]版本自动选择）"
-						},
-						{
-							"key": "CN",
-							"label": "高德(暂不可用)"
-						},
-						{
-							"key": "XX",
-							"label": "Apple"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Services.Tiles",
-					"name": "[瓦片地图]服务版本",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "瓦片地图的数据源，此选项影响使用的地图与图层",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（随[动态配置]版本自动选择）"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Announcements.Environment.default",
-					"name": "[通告配置]环境代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "通告的配置文件的环境代码，此选项影响功能未知",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随地区检测结果）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "XX",
-							"label": "国际"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.LagunaBeach",
-					"name": "[默认配置]为“地图”提供助力",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用“为‘地图’提供助力”，可让您将图像、评分或其他内容发布到所选的兴趣点。(“设置”>“地图”>“为‘地图’提供助力”)"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.DrivingMultiWaypointRoutesEnabled",
-					"name": "[默认配置]多途经点路线规划(iOS 16)",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用“多途经点路线规划”，可在一条路线中添加多个途经点"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.GEOAddressCorrection",
-					"name": "[默认配置]地址校正",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用定位地址矫正"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.LookupMaxParametersCount",
-					"name": "[默认配置]Spatial批量查询上限",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否移除Spatial批量查询上限"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.LocalitiesAndLandmarks",
-					"name": "[默认配置]景点与地标支持",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用景点与地标支持"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.POIBusyness",
-					"name": "[默认配置]兴趣点(POI)繁忙度支持",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用在地图内查询及上报兴趣点(POI)繁忙度"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.PedestrianAR",
-					"name": "[默认配置]现实世界中的路线(iOS 15)",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用在增强现实中查看导航(“设置”>“地图”>“步行”>“举起以查看”)"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.TransitPayEnabled",
-					"name": "[默认配置]启用公交支付集成(iOS 16)",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用在地图内显示公交卡余额与公交线路费用"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.6694982d2b14e95815e44e970235e230",
-					"name": "[默认配置]6694982d2b14e95815e44e970235e230",
-					"val": true,
-					"type": "boolean",
-					"desc": "6694982d2b14e95815e44e970235e230"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.OpticalHeading",
-					"name": "[默认配置]导航准确性",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否使用相机和运动传感器提高您位置和步行朝向的准确度(“设置”>“地图”>“步行”>“增强”)"
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Defaults.UseCLPedestrianMapMatchedLocations",
-					"name": "[默认配置]使用AR地图匹配地点(iOS 15)",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否使用AR地图匹配地点"
+					"id": "@caiyun.location.longitude",
+					"name": "经度",
+					"val": null,
+					"type": "text",
+					"desc": "经度，可以关闭MITM获取位置，手动设置"
 				}
 			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
+			"author": "@Peng-YM",
+			"repo": "https://github.com/Peng-YM/QuanX",
 			"icons": [
-				"https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios15-location-arrow-status-icon.png",
-				"https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios15-location-arrow-status-icon.png"
-			]
+				"https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
+				"https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
+			],
+	      "script": "https://github.com/arlocc/Profiles/blob/main/QuantumutlX/Scripts/caiyun.js"
 		},
 		{
 			"id": "iRingo.Weather",
