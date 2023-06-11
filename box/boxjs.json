@@ -1,1591 +1,389 @@
 {
-	"id": "Surge.app.sub",
-	"name": "blacknwarrior脚本订阅",
-	"author": "@blacknwarrior",
-	"description": "该订阅兼容BoxJs以及QX Gallery",
-	"icon": "https://avatars.githubusercontent.com/u/107193123?v=4",
-	"repo": "https://github.com/blacknwarrior/surge",
-	"apps": [
-		{
-			"id": "Caiyun",
-			"name": "彩云天气",
-			"keys": [
-				"@caiyun.token.caiyun",
-				"@caiyun.token.tencent",
-				"@caiyun.display_location",
-				"@caiyun.location.latitude",
-				"@caiyun.location.longitude",
-				"@caiyun.address"
-			"settings": [
-				{
-					"id": "@caiyun.token.caiyun",
-					"name": "彩云天气API Token",
-					"val": null,
-					"type": "text",
-					"autoGrow": false,
-					"rows": 2,
-					"desc": "彩云天气的Token，可以自行申请或者前往频道获取"
-				},
-				{
-					"id": "@caiyun.token.tencent",
-					"name": "腾讯地图API Token",
-					"val": "AHEBZ-ASTWX-CIW4P-7TV7T-AWKLS-7CFWP",
-					"type": "text",
-					"rows": 1,
-					"desc": ""
-				},
-				{
-					"id": "@caiyun.display_location",
-					"name": "是否在日志中显示经纬度",
-					"val": false,
-					"type": "boolean",
-					"desc": ""
-				},
-				{
-					"id": "@caiyun.location.latitude",
-					"name": "纬度",
-					"val": null,
-					"type": "text",
-					"desc": "纬度，可以关闭MITM获取位置，手动设置"
-				},
-				{
-					"id": "@caiyun.location.longitude",
-					"name": "经度",
-					"val": null,
-					"type": "text",
-					"desc": "经度，可以关闭MITM获取位置，手动设置"
-				}
-			],
-			"author": "@Peng-YM",
-			"repo": "https://github.com/Peng-YM/QuanX",
-			"script": "https://github.com/arlocc/Profiles/blob/main/QuantumutlX/Scripts/caiyun.js"
-			"icons": [
-				"https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
-				"https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
-			]
-		},
-		{
-			"id": "iRingo.Weather",
-			"name": "🌤 天气",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/🌤-天气\">🌤 天气</a>的使用说明进行配置",
-				"填写完成后别忘点击此页面底端右下角的\"保存\"。",
-				"查询速度:\"私有API+城市\" > \"私有API+观测站\" > \"公共API+观测站\"",
-				"定位精度:\"观测站\" > \"城市\""
-			],
-			"keys": [
-				"@iRingo.Weather.Settings",
-				"@iRingo.Weather.Caches"
-			],
-			"settings": [
-				{
-					"id": "@iRingo.Weather.Settings.Switch",
-					"name": "总功能开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用此APP修改"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.NextHour.Switch",
-					"name": "[未来一小时降水强度]修改开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "修改未来一小时降水强度"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.NextHour.Source",
-					"name": "[未来一小时降水强度]数据源",
-					"val": "www.weatherol.cn",
-					"type": "radios",
-					"items": [
-						{
-							"key": "www.weatherol.cn",
-							"label": "气象在线"
-						},
-						{
-							"key": "api.caiyunapp.com",
-							"label": "彩云天气（专业套餐及以上）"
-						}
-					],
-					"desc": "气象在线与彩云天气的数据源相同，但不支持简体中文以外的语言。"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Switch",
-					"name": "[空气质量]修改开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "修改空气质量"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Targets",
-					"name": "[空气质量]需要修改的标准",
-					"val": [
-						"HJ6332012"
-					],
-					"type": "checkboxes",
-					"desc": "选中的空气质量标准会被替换。请注意各国监测的污染物种类可能有所不同，转换算法或API未必适合当地。",
-					"items": [
-						{
-							"key": "CA.AQHI",
-							"label": "加拿大（CA AQHI）"
-						},
-						{
-							"key": "FR.ATMO",
-							"label": "法国（FR ATMO）"
-						},
-						{
-							"key": "UBA",
-							"label": "德国（UBA）"
-						},
-						{
-							"key": "NAQI",
-							"label": "印度（NAQI）"
-						},
-						{
-							"key": "EU.EAQI",
-							"label": "意大利（EU EAQI）"
-						},
-						{
-							"key": "ICARS",
-							"label": "墨西哥（ICARS）"
-						},
-						{
-							"key": "NL.LKI",
-							"label": "荷兰（NL LKI）"
-						},
-						{
-							"key": "SG.NEA",
-							"label": "新加坡（SG NEA）"
-						},
-						{
-							"key": "KR.CAI",
-							"label": "韩国（KR CAI）"
-						},
-						{
-							"key": "ES.MITECO",
-							"label": "西班牙（ES MITECO）"
-						},
-						{
-							"key": "DAQI",
-							"label": "英国（DAQI）"
-						},
-						{
-							"key": "EPA_NowCast",
-							"label": "美国（及日本）（EPA NowCast）"
-						},
-						{
-							"key": "HJ6332012",
-							"label": "中国（HJ 633—2012）"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Local.Switch",
-					"name": "[空气质量]本地替换",
-					"val": true,
-					"type": "boolean",
-					"desc": "使用本地替换算法，将Apple数据转换为特定标准"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Local.Standard",
-					"name": "[空气质量]本地替换算法",
-					"val": "WAQI_InstantCast",
-					"type": "selects",
-					"desc": "本地替换时使用的算法",
-					"items": [
-						{
-							"key": "WAQI_InstantCast",
-							"label": "WAQI InstantCast"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Source",
-					"name": "[空气质量]数据源",
-					"val": "www.weatherol.cn",
-					"type": "radios",
-					"items": [
-						{
-							"key": "Local",
-							"label": "仅使用Apple数据"
-						},
-						{
-							"key": "www.weatherol.cn",
-							"label": "气象在线"
-						},
-						{
-							"key": "api.caiyunapp.com",
-							"label": "彩云天气"
-						},
-						{
-							"key": "api.waqi.info",
-							"label": "The World Air Quality Project"
-						}
-					],
-					"desc": "空气质量数据源"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Comparison.Switch",
-					"name": "[空气质量]对比昨日空气质量",
-					"val": true,
-					"type": "boolean",
-					"desc": "与昨日空气质量指数进行对比"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.AQI.Comparison.Source",
-					"name": "[空气质量]对比昨日空气质量数据源",
-					"val": "Local",
-					"type": "radios",
-					"items": [
-						{
-							"key": "Local",
-							"label": "仅使用缓存数据"
-						},
-						{
-							"key": "api.caiyunapp.com",
-							"label": "彩云天气（个人套餐及以上）"
-						},
-						{
-							"key": "api.waqi.info",
-							"label": "The World Air Quality Project (非常慢)"
-						}
-					],
-					"desc": "对比昨日空气质量数据源"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.Map.AQI",
-					"name": "[开发中][空气质量地图]修改开关",
-					"val": false,
-					"type": "boolean",
-					"desc": "[开发中]修改空气质量地图"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.WeatherOL.HTTPHeaders",
-					"name": "[气象在线]HTTP请求头",
-					"val": "{ \"Content-Type\": \"application/json\" }",
-					"type": "text",
-					"placeholder": "{ \"Content-Type\": \"application/json\" }",
-					"desc": "请求气象在线API时使用的HTTP请求头"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.ColorfulClouds.HTTPHeaders",
-					"name": "[彩云天气]HTTP请求头",
-					"val": "{ \"Content-Type\": \"application/json\" }",
-					"type": "text",
-					"placeholder": "{ \"Content-Type\": \"application/json\" }",
-					"desc": "请求彩云天气API时使用的HTTP请求头"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.ColorfulClouds.Token",
-					"name": "[彩云天气]彩云天气令牌",
-					"val": "",
-					"type": "text",
-					"placeholder": "ABcdef1g2hiJklmN",
-					"desc": "彩云天气API令牌"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.ColorfulClouds.ForceCNForAQI",
-					"name": "[彩云天气]强制使用国标AQI（空气质量）",
-					"val": false,
-					"type": "boolean",
-					"desc": "作为空气质量数据源时，强制使用国标AQI"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.ColorfulClouds.ForceCNForComparison",
-					"name": "[彩云天气]强制使用国标AQI（对比昨日空气质量）",
-					"val": false,
-					"type": "boolean",
-					"desc": "作为对比昨日空气质量数据源时，强制使用国标AQI"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.WAQI.HTTPHeaders",
-					"name": "[WAQI]HTTP请求头",
-					"val": "{ \"Content-Type\": \"application/json\" }",
-					"type": "text",
-					"placeholder": "{ \"Content-Type\": \"application/json\" }",
-					"desc": "请求WAQI API时使用的HTTP请求头"
-				},
-				{
-					"id": "@iRingo.Weather.Settings.APIs.WAQI.Token",
-					"name": "[WAQI]WAQI令牌",
-					"val": "",
-					"type": "text",
-					"placeholder": "123456789123456789abcdefghijklmnopqrstuv",
-					"desc": "WAQI API令牌"
-				}
-			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
-			"icons": [
-				"https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/c8/76/87/c8768792-b7ab-7de4-9c70-1888096b7ae9/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp",
-				"https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/c8/76/87/c8768792-b7ab-7de4-9c70-1888096b7ae9/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp"
-			]
-		},
-		{
-			"id": "iRingo.Siri",
-			"name": "🔍 Siri与搜索",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/🔍-Siri与搜索\">🔍 Siri与搜索</a>的使用说明进行配置",
-				"影响功能范围包括但不限于“Siri建议”、“来自APPLE的内容”、“来自APPLE的建议”等"
-			],
-			"keys": [
-				"@iRingo.Siri.Settings",
-				"@iRingo.Siri.Caches"
-			],
-			"settings": [
-				{
-					"id": "@iRingo.Siri.Settings.Switch",
-					"name": "总功能开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用此APP修改"
-				},
-				{
-					"id": "@iRingo.Siri.Settings.CountryCode",
-					"name": "国家或地区代码",
-					"val": "SG",
-					"type": "selects",
-					"desc": "不同国家或地区提供的内容或有差别，此选项同时会影响分配给您不同地区的Siri服务器",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随系统地区设置）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Siri.Settings.Domains",
-					"name": "启用领域",
-					"val": [
-						"web",
-						"itunes",
-						"app_store",
-						"movies",
-						"restaurants",
-						"maps"
-					],
-					"type": "checkboxes",
-					"desc": "启用搜索的领域，未选项领域将被关闭，启用领域数据由国家和地区决定，此选项仅代表功能上的开启，不代表对应地区一定有数据和服务",
-					"items": [
-						{
-							"key": "web",
-							"label": "网页"
-						},
-						{
-							"key": "itunes",
-							"label": "iTunes"
-						},
-						{
-							"key": "app_store",
-							"label": "App Store"
-						},
-						{
-							"key": "movies",
-							"label": "电影"
-						},
-						{
-							"key": "restaurants",
-							"label": "餐厅"
-						},
-						{
-							"key": "maps",
-							"label": "地图"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Siri.Settings.Functions",
-					"name": "强制启用的功能",
-					"val": [
-						"flightutilities",
-						"lookup",
-						"mail",
-						"messages",
-						"news",
-						"safari",
-						"siri",
-						"spotlight",
-						"visualintelligence"
-					],
-					"type": "checkboxes",
-					"desc": "强制启用Siri建议的APP，被选项的功能会被强制开启，但是未选不代表关闭对应的功能，仅代表还原到该地区默认设置状态",
-					"items": [
-						{
-							"key": "flightutilities",
-							"label": "航班工具"
-						},
-						{
-							"key": "lookup",
-							"label": "查询"
-						},
-						{
-							"key": "mail",
-							"label": "邮件"
-						},
-						{
-							"key": "messages",
-							"label": "信息"
-						},
-						{
-							"key": "news",
-							"label": "新闻"
-						},
-						{
-							"key": "safari",
-							"label": "Safari浏览器"
-						},
-						{
-							"key": "siri",
-							"label": "Siri"
-						},
-						{
-							"key": "spotlight",
-							"label": "聚焦搜索"
-						},
-						{
-							"key": "visualintelligence",
-							"label": "视觉智能"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Siri.Settings.Safari_Smart_History",
-					"name": "Safari智能历史记录",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否在Safari浏览器中启用基于历史记录的Siri建议功能，启用后将在Safari浏览器起始页推荐基于时间地点跨设备等的相关浏览记录"
-				}
-			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
-			"icons": [
-				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Siri.png",
-				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Siri.png"
-			]
-		},
-		{
-			"id": "iRingo.TV",
-			"name": "📺 TV",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/📺-TV\">📺 TV</a>的使用说明进行配置",
-				"自定义TV app的配置文件及各个栏目"
-			],
-			"keys": [
-				"@iRingo.TV.Settings",
-				"@iRingo.TV.Caches"
-			],
-			"settings": [
-				{
-					"id": "@iRingo.TV.Settings.Switch",
-					"name": "总功能开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用此APP修改"
-				},
-				{
-					"id": "@iRingo.TV.Settings.Third-Party",
-					"name": "强制启用第三方影片库集成",
-					"val": false,
-					"type": "boolean",
-					"desc": "是否将桌面版/macOS版/app版等平台的TV app转换至iPad版，以启用第三方影片库集成(如: Disney+,Prime Video等)"
-				},
-				{
-					"id": "@iRingo.TV.Settings.HLSUrl",
-					"name": "强制修改播放服务器地址",
-					"val": "play-edge.itunes.apple.com",
-					"type": "selects",
-					"desc": "因为密钥服务域名禁止MitM，修改密钥服务器地址可以分离HLS与Key的MitM域名，从而恢复如对DualSubs的双语字幕支持",
-					"items": [
-						{
-							"key": "",
-							"label": "OFF(不修改)"
-						},
-						{
-							"key": "play.itunes.apple.com",
-							"label": "play.itunes.apple.com (不推荐，与播放服务域名重叠)"
-						},
-						{
-							"key": "play-edge.itunes.apple.com",
-							"label": "play-edge.itunes.apple.com (默认)"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.ServerUrl",
-					"name": "强制修改密钥服务器地址",
-					"val": "play.itunes.apple.com",
-					"type": "selects",
-					"desc": "因为密钥服务域名禁止MitM，修改密钥服务器地址可以分离HLS与Key的MitM域名，从而恢复如对DualSubs的双语字幕支持",
-					"items": [
-						{
-							"key": "",
-							"label": "OFF(不修改)"
-						},
-						{
-							"key": "play.itunes.apple.com",
-							"label": "play.itunes.apple.com (默认)"
-						},
-						{
-							"key": "play-edge.itunes.apple.com",
-							"label": "play-edge.itunes.apple.com (不推荐，与播放服务域名重叠)"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.Tabs",
-					"name": "启用的标签与栏目",
-					"val": [
-						"WatchNow",
-						"Originals",
-						"Store",
-						"Movies",
-						"TV",
-						"Sports",
-						"Kids",
-						"Library",
-						"Search"
-					],
-					"type": "checkboxes",
-					"desc": "启用的标签与栏目，未选择的标签与栏目入口将被隐藏，启用的入口由国家和地区决定，此选项仅代表功能入口上的开启，不代表对应地区一定有数据和服务",
-					"items": [
-						{
-							"key": "WatchNow",
-							"label": "立即观看"
-						},
-						{
-							"key": "Originals",
-							"label": "原创内容(TV+)"
-						},
-						{
-							"key": "Store",
-							"label": "商店"
-						},
-						{
-							"key": "Movies",
-							"label": "电影"
-						},
-						{
-							"key": "TV",
-							"label": "电视节目"
-						},
-						{
-							"key": "Sports",
-							"label": "体育节目"
-						},
-						{
-							"key": "Kids",
-							"label": "儿童"
-						},
-						{
-							"key": "Library",
-							"label": "资料库"
-						},
-						{
-							"key": "Search",
-							"label": "搜索"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Configs",
-					"name": "[配置文件]国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "“配置文件”要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.View[0]",
-					"name": "[内容详情]首选语言",
-					"val": "SG",
-					"type": "selects",
-					"desc": "“内容详情”(电影、电视节目、人物等详情页面)要更改为的首选语言",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "简体中文(中国)"
-						},
-						{
-							"key": "HK",
-							"label": "繁体粤语(香港)"
-						},
-						{
-							"key": "TW",
-							"label": "繁体中文(台湾)"
-						},
-						{
-							"key": "SG",
-							"label": "简体中文(新加坡)"
-						},
-						{
-							"key": "US",
-							"label": "英语(美国)"
-						},
-						{
-							"key": "JP",
-							"label": "日语(日本)"
-						},
-						{
-							"key": "AU",
-							"label": "英语(澳大利亚)"
-						},
-						{
-							"key": "GB",
-							"label": "英语(英国)"
-						},
-						{
-							"key": "KR",
-							"label": "韩语(韩国)"
-						},
-						{
-							"key": "CA",
-							"label": "英语(加拿大)"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.View[1]",
-					"name": "[内容详情]第二语言",
-					"val": "TW",
-					"type": "selects",
-					"desc": "当首选语言不可用时，“内容详情”(电影、电视节目、人物等详情页面)要更改为的第二语言",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "简体中文(中国)"
-						},
-						{
-							"key": "HK",
-							"label": "繁体粤语(香港)"
-						},
-						{
-							"key": "TW",
-							"label": "繁体中文(台湾)"
-						},
-						{
-							"key": "SG",
-							"label": "简体中文(新加坡)"
-						},
-						{
-							"key": "US",
-							"label": "英语(美国)"
-						},
-						{
-							"key": "JP",
-							"label": "日语(日本)"
-						},
-						{
-							"key": "AU",
-							"label": "英语(澳大利亚)"
-						},
-						{
-							"key": "GB",
-							"label": "英语(英国)"
-						},
-						{
-							"key": "KR",
-							"label": "韩语(韩国)"
-						},
-						{
-							"key": "CA",
-							"label": "英语(加拿大)"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.WatchNow",
-					"name": "[立即观看]国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "“立即观看”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Originals",
-					"name": "[原创内容](TV+)国家或地区代码",
-					"val": "TW",
-					"type": "selects",
-					"desc": "“原创内容”(TV+)栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Channels",
-					"name": "[TV频道]国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "“TV频道”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Movies",
-					"name": "[电影]国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "“电影”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.TV",
-					"name": "[电视节目]国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "“电视节目”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Sports",
-					"name": "[体育节目]国家或地区代码",
-					"val": "US",
-					"type": "selects",
-					"desc": "“体育节目”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Kids",
-					"name": "[儿童]国家或地区代码",
-					"val": "US",
-					"type": "selects",
-					"desc": "“儿童”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Persons",
-					"name": "[人物]国家或地区代码",
-					"val": "SG",
-					"type": "selects",
-					"desc": "“人物”栏目(导演、演员等)要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Search",
-					"name": "[搜索]国家或地区代码",
-					"val": "TW",
-					"type": "selects",
-					"desc": "“搜索”栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TV.Settings.CountryCode.Others",
-					"name": "[其他]国家或地区代码",
-					"val": "AUTO",
-					"type": "selects",
-					"desc": "其他未指定的栏目要更改为的地区或国家版本",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动(与当前登陆账号保持一致)"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				}
-			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
-			"icons": [
-				"https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/9c/f7/8a/9cf78ad4-5443-acc0-3b36-f13d2ad7d64c/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp",
-				"https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/9c/f7/8a/9cf78ad4-5443-acc0-3b36-f13d2ad7d64c/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp"
-			]
-		},
-		{
-			"id": "iRingo.News",
-			"name": "📰 News",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/📰-News\">📰 News</a>的使用说明进行配置",
-				"影响功能范围……等"
-			],
-			"keys": [
-				"@iRingo.News.Settings",
-				"@iRingo.News.Caches"
-			],
-			"settings": [
-				{
-					"id": "@iRingo.News.Settings.Switch",
-					"name": "总功能开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用此APP修改"
-				},
-				{
-					"id": "@iRingo.News.Settings.CountryCode",
-					"name": "国家或地区代码",
-					"val": "US",
-					"type": "selects",
-					"desc": "不同国家或地区提供的内容或有差别",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随地区检测结果）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				}
-			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
-			"icons": [
-				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple_News.png",
-				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_News.png"
-			]
-		},
-		{
-			"id": "iRingo.TestFlight",
-			"name": "✈ TestFlight",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/✈️-TestFlight\">✈️ TestFlight</a>的使用说明进行配置",
-				"影响功能范围……等"
-			],
-			"keys": [
-				"@iRingo.TestFlight.Settings",
-				"@iRingo.TestFlight.Caches"
-			],
-			"settings": [
-				{
-					"id": "@iRingo.TestFlight.Settings.Switch",
-					"name": "总功能开关",
-					"val": true,
-					"type": "boolean",
-					"desc": "是否启用此APP修改"
-				},
-				{
-					"id": "@iRingo.TestFlight.Settings.CountryCode",
-					"name": "国家或地区代码",
-					"val": "US",
-					"type": "selects",
-					"desc": "不同国家或地区提供的内容或有差别",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随地区检测结果）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.TestFlight.Settings.MultiAccount",
-					"name": "启用多账号支持",
-					"val": false,
-					"type": "boolean",
-					"desc": "是否启用多账号支持，会自动保存保存更新当前账号信息"
-				},
-				{
-					"id": "@iRingo.TestFlight.Settings.Universal",
-					"name": "启用通用应用支持(测试)",
-					"val": false,
-					"type": "boolean",
-					"desc": "是否启用通用应用支持，解除TF中app的iOS/iPadOS/macOS(AppleSilicon)平台限制"
-				}
-			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
-			"icons": [
-				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/TestFlight_2.png",
-				"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TestFlight_2.png"
-			]
-		},
-		{
-			"id": "iRingo.Watch",
-			"name": "⌚️ WATCH",
-			"descs_html": [
-				"请参照<a href=\"https://github.com/VirgilClyne/iRingo/wiki/⌚️-WATCH\">⌚️ WATCH</a>的使用说明进行配置",
-				"影响功能范围WATCH上的“指南针”、“地图”、“News”等"
-			],
-			"keys": [
-				"@iRingo.Watch.Settings",
-				"@iRingo.Watch.Caches"
-			],
-			"settings": [
-				{
-					"id": "@iRingo.Location.Settings.Geo_manifest.Dynamic.Config.Country_code.watchOS",
-					"name": "[动态配置]地理服务清单的国家或地区代码",
-					"val": "US",
-					"type": "selects",
-					"desc": "要更改为的地区或国家，此选项影响“地图”整体配置内容，包括以下的地图功能与服务",
-					"items": [
-						{
-							"key": "CN",
-							"label": "中国大陆"
-						},
-						{
-							"key": "HK",
-							"label": "香港"
-						},
-						{
-							"key": "TW",
-							"label": "台湾"
-						},
-						{
-							"key": "SG",
-							"label": "新加坡"
-						},
-						{
-							"key": "US",
-							"label": "美国"
-						},
-						{
-							"key": "JP",
-							"label": "日本"
-						},
-						{
-							"key": "AU",
-							"label": "澳大利亚"
-						},
-						{
-							"key": "GB",
-							"label": "英国"
-						},
-						{
-							"key": "KR",
-							"label": "韩国"
-						},
-						{
-							"key": "CA",
-							"label": "加拿大"
-						}
-					]
-				},
-				{
-					"id": "@iRingo.Location.Settings.Config.Announcements.Environment.watchOS",
-					"name": "[通告配置]环境代码",
-					"val": "XX",
-					"type": "selects",
-					"desc": "通告的配置文件的环境代码，此选项影响功能未知",
-					"items": [
-						{
-							"key": "AUTO",
-							"label": "自动（跟随地区检测结果）"
-						},
-						{
-							"key": "CN",
-							"label": "中国大陆版"
-						},
-						{
-							"key": "XX",
-							"label": "国际版"
-						}
-					]
-				}
-			],
-			"author": "@VirgilClyne",
-			"repo": "https://github.com/VirgilClyne/iRingo/",
-			"icons": [
-				"https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/4c/2f/15/4c2f15f5-3913-b073-2215-34f030e458f2/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp",
-				"https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/4c/2f/15/4c2f15f5-3913-b073-2215-34f030e458f2/AppIcon-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/108x0w.webp"
-			]
-		}
-	]
+  "id": "arlocc.app.sub",
+  "name": "arlocc 脚本订阅",
+  "description": "该订阅兼容BoxJs以及QX Gallery",
+  "author": "@arlocc",
+  "icon": "https://avatars.githubusercontent.com/u/107193123?v=4",
+  "repo": "https://github.com/arlocc/Profiles",
+  "apps": [{
+    "id": "多合一签到",
+    "name": "京东",
+    "keys": ["CookiesJD"],
+    "descs_html": [
+      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js\">脚本注释</a></h4>",
+      "<h4 align=\"center\">如需修改Cookie列表请严格按照<a href=\"https://www.bejson.com/json/format\">JSON格式</a>修改</h4>",
+      "<h4 align=\"center\">建议通过脚本获取Cookie</h4>",
+      "<br />",
+      "<h3 align=\"center\">签到相关教程</h3>",
+      "<p align=\"center\"><iframe src=\"https://www.youtube.com/embed/6vMz1LKF1-8\" width=\"100%\" height=\"100%\"></iframe></p>"
+    ],
+    "settings": [{
+      "id": "JD_DailyBonusLog",
+      "name": "详细响应日志",
+      "val": false,
+      "type": "boolean",
+      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+    }, {
+      "id": "JD_Crash_disable",
+      "name": "崩溃自动禁用",
+      "val": true,
+      "type": "boolean",
+      "desc": "脚本运行崩溃时(如VPN断连), 下次运行时将自动禁用相关崩溃接口(仅部分接口启用), 注: 崩溃时可能会误禁用正常接口."
+    }, {
+      "id": "JD_Retry_disable",
+      "name": "签到接口增强",
+      "val": true,
+      "type": "boolean",
+      "desc": "用于部分接口提示\"不含活动数据\"问题, 开启后会进行二次查询, 注: 可能会导致崩溃(小概率)."
+    }, {
+      "id": "JD_Follow_disable",
+      "name": "自动关注店铺",
+      "val": true,
+      "type": "boolean",
+      "desc": "部分接口签到过程可能需要关注店铺, 如介意可选择关闭."
+    }, {
+      "id": "JD_DailyBonusDisables",
+      "name": "签到接口禁用",
+      "val": "",
+      "type": "checkboxes",
+      "desc": "",
+      "items": [{
+        "key": "JDBean",
+        "label": "京东京豆"
+      }, {
+        "key": "JRSteel",
+        "label": "金融钢镚"
+      }, {
+        "key": "JDTurn",
+        "label": "京东转盘"
+      }, {
+        "key": "JDGStore",
+        "label": "京东超市"
+      }, {
+        "key": "JDCard",
+        "label": "京东卡包"
+      }, {
+        "key": "JD3C",
+        "label": "京东数码"
+      }, {
+        "key": "JDSuitcase",
+        "label": "京东箱包"
+      }, {
+        "key": "JDChild",
+        "label": "京东童装"
+      }, {
+        "key": "JDBaby",
+        "label": "京东母婴"
+      }, {
+        "key": "JDCash",
+        "label": "京东红包"
+      }, {
+        "key": "JDFSale",
+        "label": "京东闪购"
+      }, {
+        "key": "JDBook",
+        "label": "京东图书"
+      }, {
+        "key": "JDStory",
+        "label": "失眠补贴"
+      }, {
+        "key": "JDPhone",
+        "label": "手机小时达"
+      }, {
+        "key": "JDSchool",
+        "label": "京东校园"
+      }, {
+        "key": "JDUndies",
+        "label": "京东内衣"
+      }, {
+        "key": "JDShoes",
+        "label": "京东鞋靴"
+      }, {
+        "key": "JDShand",
+        "label": "京东二手"
+      }, {
+        "key": "JDHealth",
+        "label": "京东健康"
+      }, {
+        "key": "JDWomen",
+        "label": "京东女装"
+      }, {
+        "key": "JDSecKill",
+        "label": "京东秒杀"
+      }, {
+        "key": "JTDouble",
+        "label": "金贴双签"
+      }, {
+        "key": "JDVege",
+        "label": "京东菜场"
+      }, {
+        "key": "JDClean",
+        "label": "京东清洁"
+      }, {
+        "key": "JDCare",
+        "label": "京东个护"
+      }, {
+        "key": "JDaccompany",
+        "label": "京东陪伴"
+      }, {
+        "key": "JDCube",
+        "label": "京东魔方"
+      }, {
+        "key": "JDJiaDian",
+        "label": "京东家电"
+      }, {
+        "key": "JDDouble",
+        "label": "京豆双签"
+      }, {
+        "key": "subsidy",
+        "label": "京东金贴"
+      }, {
+        "key": "JDGetCash",
+        "label": "京东现金"
+      }, {
+        "key": "JDShake",
+        "label": "京东摇一摇"
+      }, {
+        "key": "Qbear",
+        "label": "总京豆查询"
+      }, {
+        "key": "TCash",
+        "label": "总红包查询"
+      }, {
+        "key": "TSteel",
+        "label": "总钢镚查询"
+      }, {
+        "key": "TotalSubsidy",
+        "label": "总金贴查询"
+      }, {
+        "key": "TotalMoney",
+        "label": "总现金查询"
+      }]
+    }, {
+      "id": "JD_DailyBonusTimeOut",
+      "name": "超时退出 (毫秒)",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认无超时 (点击以展开说明)",
+      "desc": "按需填写, 用于由网络不稳定引起的脚本中断, 正常或越狱用户建议留空. 如QX日志出现大量\"JS Context timeout\"后脚本中断时, 建议填写6000"
+    }, {
+      "id": "JD_DailyBonusDelay",
+      "name": "接口延迟 (毫秒)",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认并发无延迟 (点击以展开说明)",
+      "desc": "延迟作用于每个签到接口, 该参数接受随机或指定延迟(例: '2000'则表示延迟2秒; '2000-5000'则表示延迟最小2秒,最大5秒内的随机延迟), 如填入延迟则切换顺序签到(耗时较长); VPN重启或越狱用户建议填写1(顺序执行), Surge用户请注意在SurgeUI界面调整脚本超时."
+    }, {
+      "id": "CookiesJD",
+      "name": "Cookie列表",
+      "val": "",
+      "type": "textarea",
+      "autoGrow": false,
+      "rows": 9,
+      "val": "[\n  {\n    \"cookie\": \"此处填写账号1 Cookie\"\n  },\n  {\n    \"cookie\": \"此处填写账号2 Cookie\",\n    \"jrBody\": \"此处填写账号2 钢镚Body\"\n  }\n]",
+      "placeholder": "[ {\"cookie\": \"pt_key=xxx;pt_pin=yyy;\", \"jrBody\": \"reqData=zzz\"}  ]",
+      "desc": "Cookie和钢镚签到Body列表, 如需修改请严格按照JSON格式填写; \"cookie\"为必须, 其他为可选."
+    }],
+    "scripts": [{
+      "name": "京东签到",
+      "script": "https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js"
+    }, {
+      "name": "初始化设置",
+      "script": "https://gist.githubusercontent.com/NobyDa/91cbe57dd50b3588a975af8922507a72/raw/JD_initial.js"
+    }],
+    "author": "@NobyDa",
+    "repo": "https://github.com/NobyDa/Script/tree/master/JD-DailyBonus",
+    "icons": ["https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/jd.png", "https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png"] 
+    }, {
+      "id": "Caiyun",
+      "name": "彩云天气",
+      "keys": [
+        "@caiyun.token.caiyun",
+        "@caiyun.token.tencent",
+        "@caiyun.display_location",
+        "@caiyun.location.latitude",
+        "@caiyun.location.longitude",
+        "@caiyun.address"
+      ],
+      "settings": [
+        {
+          "id": "@caiyun.token.caiyun",
+          "name": "彩云天气API Token",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 2,
+          "desc": "彩云天气的Token，可以自行申请或者前往频道获取"
+        },
+        {
+          "id": "@caiyun.token.tencent",
+          "name": "腾讯地图API Token",
+          "val": "AHEBZ-ASTWX-CIW4P-7TV7T-AWKLS-7CFWP",
+          "type": "text",
+          "rows": 1,
+          "desc": ""
+        },
+        {
+          "id": "@caiyun.display_location",
+          "name": "是否在日志中显示经纬度",
+          "val": false,
+          "type": "boolean",
+          "desc": ""
+        },
+        {
+          "id": "@caiyun.location.latitude",
+          "name": "纬度",
+          "val": null,
+          "type": "text",
+          "desc": "纬度，可以关闭MITM获取位置，手动设置"
+        },
+        {
+          "id": "@caiyun.location.longitude",
+          "name": "经度",
+          "val": null,
+          "type": "text",
+          "desc": "经度，可以关闭MITM获取位置，手动设置"
+        }
+      ],
+      "author": "@Peng-YM",
+      "repo": "https://github.com/Peng-YM/QuanX",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
+      ],
+      "script": "https://github.com/arlocc/Profiles/blob/main/QuantumutlX/Scripts/caiyun.js"
+    }, {
+      "id": "nasapic",
+      "name": "NASA每日一图",
+      "descs_html": [
+      "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js\">脚本地址</a>】",
+      "首先前往<a href=\"https://api.nasa.gov\">NASA</a>申请一个API，申请流程非常简单，把得到的API填入脚本即可"
+    ],
+      "keys": ["@NASA.nasaapi"],
+      "settings": [
+      {
+      "id": "@NASA.translate",
+      "name": "翻译",
+      "val": false,
+      "type": "boolean",
+      "desc": "是否进行翻译"
+    }, {
+      "id": "@NASA.nasaapi",
+      "name": "API",
+      "val": "",
+      "placeholder": "686BJ2YbpY****************Op8gaVTeVs0t",
+      "type": "textarea",
+      "autoGrow": true,
+      "rows": 1,
+      "desc": "请填入API"
+      }
+    ],
+      "author": "@evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/nasa",
+      "icons": [
+       "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/nasa_tran.png",
+       "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/nasa.png"
+    ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js"
+    }, {  
+      "id": "BiliRegion",
+      "name": "哔哩番剧自动地区",
+      "descs_html": [
+       "<h4 align=\"center\">脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js\">脚本注释</a></h4>"
+    ],
+      "keys": ["BiliArea_Policy", "BiliArea_CN", "BiliArea_HK", "BiliArea_TW"],
+      "settings": [{
+      "id": "BiliAreaNotify",
+      "name": "静默运行",
+      "val": false,
+      "type": "boolean",
+      "desc": "开启后将不再发出切换策略通知"
+    }, {
+      "id": "BiliDoubanRating",
+      "name": "豆瓣评分",
+      "val": true,
+      "type": "boolean",
+      "desc": "关闭后将不再查询豆瓣评分, 可显著提高相关页面载入速度"
+    }, {
+      "id": "BiliArea_Policy",
+      "name": "策略组名",
+      "val": "",
+      "type": "text",
+      "placeholder": "(点击以展开说明)",
+      "desc": "哔哩哔哩分流的策略组名"
+    }, {
+      "id": "BiliArea_CN",
+      "name": "中国大陆-子策略名",
+      "val": "DIRECT",
+      "type": "text",
+      "placeholder": "(点击以展开说明)",
+      "desc": "哔哩哔哩分流策略组里的中国大陆子策略名"
+    }, {
+      "id": "BiliArea_HK",
+      "name": "中国香港-子策略名",
+      "val": "",
+      "type": "text",
+      "placeholder": "(点击以展开说明)",
+      "desc": "哔哩哔哩分流策略组里的香港子策略名"
+    }, {
+      "id": "BiliArea_TW",
+      "name": "中国台湾-子策略名",
+      "val": "",
+      "type": "text",
+      "placeholder": "(点击以展开说明)",
+      "desc": "哔哩哔哩分流策略组里的台湾子策略名"
+    }],
+    "author": "@NobyDa",
+    "repo": "https://github.com/NobyDa/Script/blob/master/Surge/JS/Bili_Auto_Regions.js",
+    "icons": ["https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/bilibili.png", "https://raw.githubusercontent.com/NobyDa/mini/master/Color/bilibili.png"]
+  }],
+  "task": [{
+    "config": "0 8 * * * https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东签到, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png",
+    "addons": "https://raw.githubusercontent.com/Arlo44/QuantumutlX/main/GetCookie.qxrewrite, tag=GetCookie获取"
+  }, {
+    "config": "0 */30 9-21 * * * https://raw.githubusercontent.com/zZPiglet/Task/master/Weibo/Weibo.js, tag=微博推送, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png",
+    "addons": "https://raw.githubusercontent.com/Arlo44/QuantumutlX/main/GetCookie.qxrewrite, tag=GetCookie获取"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_bean_change.js, tag=京东资产变动通知, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/exchange.js, tag=汇率监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/exchangerate.png"
+  }, {
+        "config": "0 9 * * * https://raw.githubusercontent.com/lowking/Scripts/master/QQVip/qqVipCheckIn.js, tag=qq会员成长值签到, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/COVID-19.png"
+  }, {
+    "config": "0 10 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/nCov.js, tag=疫情日报, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/COVID-19.png"
+  }, {
+    "config": "10 8-22/3 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, tag=彩云天气, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/caiyun.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/epic.js, tag=Epic周免, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/epic.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/nasapic.js, tag=NASA每日一图, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/nasa.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/AppMonitor.js, tag=App价格监控, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/appstore.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/idaily.js, tag=iDaily每日环球视野, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/idaily.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/Dark%20Sky.js, tag=Dark Sky, img-url=https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/IconSet/DarkSky.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/Dark%20Sky2.js, tag=Dark Sky2, img-url=https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/IconSet/DarkSky.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/Dark%20Sky%20Pro.js, tag=Dark Sky Pro, img-url=https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/IconSet/DarkSky.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/weather_hour.js, tag=weather_hour, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weather.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/weather_pro.js, tag=weather_por, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weather.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/weather_pro2.js, tag=weather_por2, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weather.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/weather_week.js, tag=weather_week, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weather.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scripts/cron-sync-artifacts.js, tag=Sub-Store, img-url=https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/IconSet/Sub-Store.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/githubdulong/Script/master/One.js, tag=每日壹句, img-url=https://raw.githubusercontent.com/anker1209/icon/main/mryj.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/telegram.js, tag=TG频道图片推送, img-url=https://raw.githubusercontent.com/anker1209/icon/main/mryj.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/Scripts/setu.js, tag=色图, img-url=https://raw.githubusercontent.com/arlocc/Profiles/main/QuantumutlX/IconSet/pixiv.png"
+  }, {
+    "config": "0 8 * * * https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_config.js, tag=微博配置, img-url=https://raw.githubusercontent.com/zmqcherish/proxy-script/main/imgs/icon/weibo.png"
+  }]
 }
