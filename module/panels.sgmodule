@@ -46,7 +46,7 @@ flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/
 timecard = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
 
 显示本省实时油价
-YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youjia
+YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
 
 CNPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/CNPing.js
 
