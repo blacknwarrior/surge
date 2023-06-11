@@ -10,4 +10,4 @@ NASA每日一图 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarri
 色图 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/setu.js
 今日油价 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
 黑料不打烊 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/hlbdy.js
-彩云天气 = type=cron,cronexp=10 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
+
