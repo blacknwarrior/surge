@@ -14,12 +14,6 @@
 (^https?:\/\/app\.biliintl\.com\/intl\/.+)(&sim_code=\d+)(.+) $1$3 302
 
 [Script]
-#!name=彩云天气 v0.1 alpha (@ Peng-YM)
-#!desc=彩云天气通知
-#hostname=weather-data.apple.com, api.weather.com
-type=http-request, pattern=https:\/\/((weather-data\.apple)|(api.weather))\.com, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, require-body=false
-
-
 #!name=Wechat (@ Choler&NobyDa)
 #!desc=去微信公众号广告
 #hostname = mp.weixin.qq.com
@@ -57,4 +51,4 @@ BiliBili_HD = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc
 
 
 [MITM]
-hostname = %INSERT% *.wikipedia.org,*.wikiwand.com, app.biliintl.com, mp.weixin.qq.com, ap?.bili*i.com, ap?.bili*i.net, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, ipadcms.caixin.com, gateway.caixin.com, api.bilibili.com, weather-data.apple.com, api.weather.com
+hostname = %INSERT% *.wikipedia.org,*.wikiwand.com, app.biliintl.com, mp.weixin.qq.com, ap?.bili*i.com, ap?.bili*i.net, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, ipadcms.caixin.com, gateway.caixin.com, api.bilibili.com
