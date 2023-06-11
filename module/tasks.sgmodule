@@ -4,15 +4,10 @@
 
 [Script]
 
-汇率监控 = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
-NASA每日一图 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/nasapic.js
-Dark Sky = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/dark%20sky.js
-Dark Sky2 = type=cron,cronexp=17 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/dark%20sky2.js
-Dark Sky Pro = type=cron,cronexp=417 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/darkskypro.js
-Weather Por = type=cron,cronexp=40 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/weather_pro.js
-Weather Por2 = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/weather_pro2.js
-每日壹句 = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/oneSay.js
-色图 = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/setu.js
-今日油价 = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
-黑料不打烊 = type=cron,cronexp=4 15 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/hlbdy.js
-#Auto join TF = type=cron,cronexp=*/10 0-7 * * *,script-path=https://github.com/DecoAri/JavaScript/blob/main/Surge/Auto_join_TF.js?raw=true,wake-system=0,timeout=180
+汇率监控 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
+NASA每日一图 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/nasapic.js
+每日壹句 = type=cron,cronexp=10 10* * *,script-path=https://blacknwarrior.github.io/surge/scripts/oneSay.js
+色图 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/setu.js
+今日油价 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
+黑料不打烊 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/hlbdy.js
+彩云天气 = type=cron,cronexp=10 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
