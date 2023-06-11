@@ -4,6 +4,12 @@
 [Panel]
 functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=60
 
+NetSpeed = script-name=NetSpeed,update-interval=-1
+
+CNPing = script-name=CNPing,update-interval=120
+
+USPing = script-name=USPing,update-interval=120
+
 NetISP = script-name=NetISP,update-interval=-1
 
 Sub_info = script-name=Sub_info,update-interval=43200
@@ -24,8 +30,15 @@ disney_check = script-name=disney_check,title=Disney+ 解锁检测,content=请�
 # 附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
 functionstatus = type=generic, script-path=https://raw.githubusercontent.com/smartmimi/conf/master/surge/functionstatus.js
 
+CNPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/CNPing.js
+
+USPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/USPing.js
+
 #NetISP 面板
 NetISP = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/Netisp.js
+
+#测试网络下载速度、延迟并根据速度和延迟改变图标和颜色，乌龟、兔子还是闪电？
+NetSpeed = type=generic,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js,argument=title=NetSpeed&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
 
 # 机场信息, 必须修改的字段:你encode后的机场订阅链接
 Sub_info = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/sub_info_panel.js,script-update-interval=0
