@@ -12,12 +12,12 @@ const digits = 5; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    USD: ["美元", "🇺🇸"],
-    CNY: ["人民币", "🇨🇳"],
-    HKD: ["港币", "🇭🇰"],
-    JPY: ["日元", "🇯🇵"],
-    EUR: ["欧元", "🇪🇺"],
-    GBP: ["英镑", "🇬🇧"],
+    USD: ["美元 (USD)", "🇺🇸"],
+    CNY: ["人民币(CNY)", "🇨🇳"],
+    HKD: ["港币 (HKD)", "🇭🇰"],
+    JPY: ["日元 (JPY)", "🇯🇵"],
+    EUR: ["欧元 (EUR)", "🇪🇺"],
+    GBP: ["英镑 (GBP)", "🇬🇧"],
 };
 
 
@@ -32,11 +32,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]} 兌 ${roundNumber(rate, digits)}${
+                    line = `${target[1]} 1${source[0]}=${roundNumber(rate, digits)}${
                         target[0]
                     }\n`;
                 } else {
-                    line = `${target[1]} 1${source[0]} 兌 ${roundNumber(rate, digits)}${
+                    line = `${target[1]} 1${source[0]}=${roundNumber(rate, digits)}${
                         target[0]
                     }\n`;
                 }
