@@ -1,200 +1,11 @@
 {
-  "id": "arlocc.app.sub",
-  "name": "arlocc 脚本订阅",
-  "description": "该订阅兼容BoxJs以及QX Gallery",
-  "author": "@arlocc",
+  "id": "blacknwarrior.app.sub",
+  "name": "blacknwarrior应用订阅",
+  "author": "@blacknwarrior",
   "icon": "https://avatars.githubusercontent.com/u/107193123?v=4",
-  "repo": "https://github.com/arlocc/Profiles",
-  "apps": [{
-    "id": "多合一签到",
-    "name": "京东",
-    "keys": ["CookiesJD"],
-    "descs_html": [
-      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js\">脚本注释</a></h4>",
-      "<h4 align=\"center\">如需修改Cookie列表请严格按照<a href=\"https://www.bejson.com/json/format\">JSON格式</a>修改</h4>",
-      "<h4 align=\"center\">建议通过脚本获取Cookie</h4>",
-      "<br />",
-      "<h3 align=\"center\">签到相关教程</h3>",
-      "<p align=\"center\"><iframe src=\"https://www.youtube.com/embed/6vMz1LKF1-8\" width=\"100%\" height=\"100%\"></iframe></p>"
-    ],
-    "settings": [{
-      "id": "JD_DailyBonusLog",
-      "name": "详细响应日志",
-      "val": false,
-      "type": "boolean",
-      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
-    }, {
-      "id": "JD_Crash_disable",
-      "name": "崩溃自动禁用",
-      "val": true,
-      "type": "boolean",
-      "desc": "脚本运行崩溃时(如VPN断连), 下次运行时将自动禁用相关崩溃接口(仅部分接口启用), 注: 崩溃时可能会误禁用正常接口."
-    }, {
-      "id": "JD_Retry_disable",
-      "name": "签到接口增强",
-      "val": true,
-      "type": "boolean",
-      "desc": "用于部分接口提示\"不含活动数据\"问题, 开启后会进行二次查询, 注: 可能会导致崩溃(小概率)."
-    }, {
-      "id": "JD_Follow_disable",
-      "name": "自动关注店铺",
-      "val": true,
-      "type": "boolean",
-      "desc": "部分接口签到过程可能需要关注店铺, 如介意可选择关闭."
-    }, {
-      "id": "JD_DailyBonusDisables",
-      "name": "签到接口禁用",
-      "val": "",
-      "type": "checkboxes",
-      "desc": "",
-      "items": [{
-        "key": "JDBean",
-        "label": "京东京豆"
-      }, {
-        "key": "JRSteel",
-        "label": "金融钢镚"
-      }, {
-        "key": "JDTurn",
-        "label": "京东转盘"
-      }, {
-        "key": "JDGStore",
-        "label": "京东超市"
-      }, {
-        "key": "JDCard",
-        "label": "京东卡包"
-      }, {
-        "key": "JD3C",
-        "label": "京东数码"
-      }, {
-        "key": "JDSuitcase",
-        "label": "京东箱包"
-      }, {
-        "key": "JDChild",
-        "label": "京东童装"
-      }, {
-        "key": "JDBaby",
-        "label": "京东母婴"
-      }, {
-        "key": "JDCash",
-        "label": "京东红包"
-      }, {
-        "key": "JDFSale",
-        "label": "京东闪购"
-      }, {
-        "key": "JDBook",
-        "label": "京东图书"
-      }, {
-        "key": "JDStory",
-        "label": "失眠补贴"
-      }, {
-        "key": "JDPhone",
-        "label": "手机小时达"
-      }, {
-        "key": "JDSchool",
-        "label": "京东校园"
-      }, {
-        "key": "JDUndies",
-        "label": "京东内衣"
-      }, {
-        "key": "JDShoes",
-        "label": "京东鞋靴"
-      }, {
-        "key": "JDShand",
-        "label": "京东二手"
-      }, {
-        "key": "JDHealth",
-        "label": "京东健康"
-      }, {
-        "key": "JDWomen",
-        "label": "京东女装"
-      }, {
-        "key": "JDSecKill",
-        "label": "京东秒杀"
-      }, {
-        "key": "JTDouble",
-        "label": "金贴双签"
-      }, {
-        "key": "JDVege",
-        "label": "京东菜场"
-      }, {
-        "key": "JDClean",
-        "label": "京东清洁"
-      }, {
-        "key": "JDCare",
-        "label": "京东个护"
-      }, {
-        "key": "JDaccompany",
-        "label": "京东陪伴"
-      }, {
-        "key": "JDCube",
-        "label": "京东魔方"
-      }, {
-        "key": "JDJiaDian",
-        "label": "京东家电"
-      }, {
-        "key": "JDDouble",
-        "label": "京豆双签"
-      }, {
-        "key": "subsidy",
-        "label": "京东金贴"
-      }, {
-        "key": "JDGetCash",
-        "label": "京东现金"
-      }, {
-        "key": "JDShake",
-        "label": "京东摇一摇"
-      }, {
-        "key": "Qbear",
-        "label": "总京豆查询"
-      }, {
-        "key": "TCash",
-        "label": "总红包查询"
-      }, {
-        "key": "TSteel",
-        "label": "总钢镚查询"
-      }, {
-        "key": "TotalSubsidy",
-        "label": "总金贴查询"
-      }, {
-        "key": "TotalMoney",
-        "label": "总现金查询"
-      }]
-    }, {
-      "id": "JD_DailyBonusTimeOut",
-      "name": "超时退出 (毫秒)",
-      "val": "",
-      "type": "number",
-      "placeholder": "默认无超时 (点击以展开说明)",
-      "desc": "按需填写, 用于由网络不稳定引起的脚本中断, 正常或越狱用户建议留空. 如QX日志出现大量\"JS Context timeout\"后脚本中断时, 建议填写6000"
-    }, {
-      "id": "JD_DailyBonusDelay",
-      "name": "接口延迟 (毫秒)",
-      "val": "",
-      "type": "number",
-      "placeholder": "默认并发无延迟 (点击以展开说明)",
-      "desc": "延迟作用于每个签到接口, 该参数接受随机或指定延迟(例: '2000'则表示延迟2秒; '2000-5000'则表示延迟最小2秒,最大5秒内的随机延迟), 如填入延迟则切换顺序签到(耗时较长); VPN重启或越狱用户建议填写1(顺序执行), Surge用户请注意在SurgeUI界面调整脚本超时."
-    }, {
-      "id": "CookiesJD",
-      "name": "Cookie列表",
-      "val": "",
-      "type": "textarea",
-      "autoGrow": false,
-      "rows": 9,
-      "val": "[\n  {\n    \"cookie\": \"此处填写账号1 Cookie\"\n  },\n  {\n    \"cookie\": \"此处填写账号2 Cookie\",\n    \"jrBody\": \"此处填写账号2 钢镚Body\"\n  }\n]",
-      "placeholder": "[ {\"cookie\": \"pt_key=xxx;pt_pin=yyy;\", \"jrBody\": \"reqData=zzz\"}  ]",
-      "desc": "Cookie和钢镚签到Body列表, 如需修改请严格按照JSON格式填写; \"cookie\"为必须, 其他为可选."
-    }],
-    "scripts": [{
-      "name": "京东签到",
-      "script": "https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js"
-    }, {
-      "name": "初始化设置",
-      "script": "https://gist.githubusercontent.com/NobyDa/91cbe57dd50b3588a975af8922507a72/raw/JD_initial.js"
-    }],
-    "author": "@NobyDa",
-    "repo": "https://github.com/NobyDa/Script/tree/master/JD-DailyBonus",
-    "icons": ["https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/jd.png", "https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png"] 
-    }, {
+  "repo": "https://github.com/blacknwarrior/surge",
+  "apps": [
+    {
       "id": "Caiyun",
       "name": "彩云天气",
       "keys": [
@@ -251,40 +62,330 @@
         "https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
         "https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
       ],
-      "script": "https://github.com/arlocc/Profiles/blob/main/QuantumutlX/Scripts/caiyun.js"
-    }, {
-      "id": "nasapic",
-      "name": "NASA每日一图",
-      "descs_html": [
-      "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js\">脚本地址</a>】",
-      "首先前往<a href=\"https://api.nasa.gov\">NASA</a>申请一个API，申请流程非常简单，把得到的API填入脚本即可"
-    ],
-      "keys": ["@NASA.nasaapi"],
+      "script": "https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js"
+    },
+    {
+      "id": "running-mode",
+      "name": "SSID 运行模式",
+      "keys": [
+        "@surge_running_mode.silence",
+        "@surge_running_mode.cellular",
+        "@surge_running_mode.wifi",
+        "@surge_running_mode.all_direct",
+        "@surge_running_mode.all_proxy"
+      ],
+      "author": "@Peng-YM",
+      "repo": "https://github.com/Peng-YM/QuanX",
       "settings": [
-      {
-      "id": "@NASA.translate",
-      "name": "翻译",
-      "val": false,
-      "type": "boolean",
-      "desc": "是否进行翻译"
-    }, {
-      "id": "@NASA.nasaapi",
-      "name": "API",
-      "val": "",
-      "placeholder": "686BJ2YbpY****************Op8gaVTeVs0t",
-      "type": "textarea",
-      "autoGrow": true,
-      "rows": 1,
-      "desc": "请填入API"
-      }
-    ],
-      "author": "@evilbutcher",
-      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/nasa",
+        {
+          "id": "@surge_running_mode.silence",
+          "name": "静默运行",
+          "val": false,
+          "type": "boolean",
+          "desc": "打开后模式切换时不显示通知"
+        },
+        {
+          "id": "@surge_running_mode.cellular",
+          "name": "默认蜂窝数据模式",
+          "val": "RULE",
+          "type": "radios",
+          "items": [
+            {
+              "key": "RULE",
+              "label": "规则模式"
+            },
+            {
+              "key": "PROXY",
+              "label": "全局代理模式"
+            },
+            {
+              "key": "DIRECT",
+              "label": "全局直连模式"
+            }
+          ],
+          "desc": "默认规则模式"
+        },
+        {
+          "id": "@surge_running_mode.wifi",
+          "name": "默认WIFI模式",
+          "val": "RULE",
+          "type": "radios",
+          "items": [
+            {
+              "key": "RULE",
+              "label": "规则模式"
+            },
+            {
+              "key": "PROXY",
+              "label": "全局代理模式"
+            },
+            {
+              "key": "DIRECT",
+              "label": "全局直连模式"
+            }
+          ],
+          "desc": "默认规则模式"
+        },
+        {
+          "id": "@surge_running_mode.all_direct",
+          "name": "全局直连的WIFI列表",
+          "val": "[\"WRT32X\", \"WRT32X Extreme\"]",
+          "type": "text",
+          "desc": "填入全局直连的WIFI列表，不可留空，默认的方括号需要保留！"
+        },
+        {
+          "id": "@surge_running_mode.all_proxy",
+          "name": "全局代理的WIFI列表",
+          "val": "[]",
+          "type": "text",
+          "desc": "填入全局代理的WIFI列表，不可留空，默认的方括号需要保留！"
+        }
+      ],
       "icons": [
-       "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/nasa_tran.png",
-       "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/nasa.png"
-    ],
-      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js"
-     }
+        "https://github.com/Peng-YM/QuanX/blob/master/assets/icons/Surge_run_transparent1.png?raw=true",
+        "https://github.com/Peng-YM/QuanX/blob/master/assets/icons/Surge_run1.png?raw=true"
+      ]
+    },
+    {
+      "id": "ssid-auto-policy",
+      "name": "SSID 自动策略",
+      "keys": [
+        "@surge_auto_policy.silence",
+        "@surge_auto_policy.cellular",
+        "@surge_auto_policy.wifi",
+        "@surge_auto_policy.all_direct",
+        "@surge_auto_policy.all_proxy",
+        "@surge_auto_policy.whitelist",
+        "@surge_auto_policy.global_proxy",
+        "@surge_auto_policy.global_direct"
+      ],
+      "author": "@Peng-YM",
+      "repo": "https://github.com/Peng-YM/QuanX",
+      "settings": [
+        {
+          "id": "@surge_auto_policy.silence",
+          "name": "静默运行",
+          "val": false,
+          "type": "boolean",
+          "desc": "打开后模式切换时不显示通知"
+        },
+        {
+          "id": "@surge_auto_policy.global_proxy",
+          "name": "全局代理模式下启动的策略",
+          "val": "📌 手动选择 <== 注意需要改成自己的策略！",
+          "type": "text",
+          "desc": "全局代理模式下，所有不在白名单的策略组将自动切换至此策略。"
+        },
+        {
+          "id": "@surge_auto_policy.global_direct",
+          "name": "全局直连模式下启动的策略",
+          "val": "DIRECT",
+          "type": "text",
+          "desc": "全局直连模式下，所有不在白名单的策略组将自动切换至此策略。"
+        },
+        {
+          "id": "@surge_auto_policy.cellular",
+          "name": "默认蜂窝数据模式",
+          "val": "RULE",
+          "type": "radios",
+          "items": [
+            {
+              "key": "RULE",
+              "label": "规则模式"
+            },
+            {
+              "key": "PROXY",
+              "label": "全局代理模式"
+            },
+            {
+              "key": "DIRECT",
+              "label": "全局直连模式"
+            }
+          ],
+          "desc": "默认规则模式"
+        },
+        {
+          "id": "@surge_auto_policy.wifi",
+          "name": "默认WIFI模式",
+          "val": "RULE",
+          "type": "radios",
+          "items": [
+            {
+              "key": "RULE",
+              "label": "规则模式"
+            },
+            {
+              "key": "PROXY",
+              "label": "全局代理模式"
+            },
+            {
+              "key": "DIRECT",
+              "label": "全局直连模式"
+            }
+          ],
+          "desc": "默认规则模式"
+        },
+        {
+          "id": "@surge_auto_policy.all_direct",
+          "name": "全局直连的WIFI列表",
+          "val": "WRT32X, WRT32X Extreme",
+          "type": "text",
+          "desc": "填入全局直连的WIFI名称，多个WIFI用逗号分隔"
+        },
+        {
+          "id": "@surge_auto_policy.all_proxy",
+          "name": "全局代理的WIFI列表",
+          "val": "",
+          "type": "text",
+          "desc": "填入全局代理的WIFI名称，多个WIFI用逗号分隔"
+        },
+        {
+          "id": "@surge_auto_policy.whitelist",
+          "name": "白名单策略",
+          "val": "Netease, AdGuard",
+          "type": "text",
+          "desc": "填入白名单列表，在此列表中的策略不会执行切换。比如说去广告策略，网易云等策略可以加入此列表。多个策略用逗号分隔"
+        }
+      ],
+      "icons": [
+        "https://github.com/Peng-YM/QuanX/blob/master/assets/icons/Surge_run_transparent.png?raw=true",
+        "https://github.com/Peng-YM/QuanX/blob/master/assets/icons/Surge_run.png?raw=true"
+      ]
+    },
+    {
+      "id": "github-private-repo",
+      "name": "Github私有仓库",
+      "keys": [
+        "@github_private_repo.username",
+        "@github_private_repo.token"
+      ],
+      "author": "@Peng-YM",
+      "repo": "https://github.com/Peng-YM/QuanX",
+      "settings": [
+        {
+          "id": "@github_private_repo.username",
+          "name": "Github用户名",
+          "val": "",
+          "type": "text",
+          "desc": "你的Github用户名"
+        },
+        {
+          "id": "@github_private_repo.token",
+          "name": "Github仓库的Token",
+          "val": "",
+          "type": "text",
+          "desc": "请参照脚本说明生成token，否则无法访问！"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/58xinian/icon/master/Github_mini.png",
+        "https://raw.githubusercontent.com/58xinian/icon/master/Github.png"
+      ]
+    },
+    {
+      "id": "next-dns",
+      "name": "NextDNS",
+      "author": "@Peng-YM",
+      "repo": "https://github.com/Peng-YM/Sub-Store",
+      "keys": [],
+      "settings": [
+        {
+          "id": "@NextDNS.url",
+          "name": "NextDNS绑定URL",
+          "val": "",
+          "type": "text",
+          "desc": "NextDNS配置页面 > 已绑定的IP > 显示高级选项 > 最下面一行链接"
+        },
+        {
+          "id": "@NextDNS.servers",
+          "name": "DNS服务器",
+          "val": "",
+          "type": "text",
+          "desc": "NextDNS配置页面 > 已绑定的IP > DNS服务器，注意需要用英文逗号分隔。"
+        },
+        {
+          "id": "@NextDNS.silence",
+          "name": "静默运行",
+          "val": false,
+          "type": "boolean",
+          "desc": "打开后DNS绑定时不显示通知"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/58xinian/icon/master/telegram_mini.png",
+        "https://raw.githubusercontent.com/58xinian/icon/master/telegram.png"
+      ]
+    },
+    {
+      "id": "airport",
+      "name": "机场流量",
+      "keys": [],
+      "settings": [
+        {
+          "id": "airport_url",
+          "name": "订阅链接",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "http://XXXX",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "输入订阅链接"
+        },
+        {
+          "id": "airport_title",
+          "name": "标题",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "浦东机场",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "输入机场名称"
+        },
+        {
+          "id": "airport_rest_day",
+          "name": "重置时间",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "3",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "输入下一次重置的时间（几号），可选"
+        },
+        {
+          "id": "airport_expire",
+          "name": "套餐到期日期",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "yyyy-MM-dd",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "输入套餐到期日期，可选"
+        },
+        {
+          "id": "airport_icon",
+          "name": "图标",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "airplane.circle",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "输入图标名称，可选"
+        },
+        {
+          "id": "airport_color",
+          "name": "图标颜色",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "#007aff",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "输入图标颜色，可选"
+        }
+      ],
+      "author": "@moi",
+      "repo": "https://github.com/smartmimi/conf/master/boxjs",
+      "script": "https://github.com/smartmimi/conf/tree/master/surge/sub_info_panel.js",
+      "icons": ["https://raw.githubusercontent.com/smartmimi/conf/master/boxjs/caiji.png","https://raw.githubusercontent.com/smartmimi/conf/master/boxjs/caiji.png"]
+    }
   ]
 }
