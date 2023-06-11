@@ -4,11 +4,11 @@
 [Panel]
 functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=60
 
+NetISP = script-name=NetISP,update-interval=-1
+
 Sub_info = script-name=Sub_info,update-interval=43200
 
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
-
-NetISP = script-name=NetISP,update-interval=-1
 
 net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
 
