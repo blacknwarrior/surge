@@ -7,6 +7,6 @@
 汇率监控 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
 每日壹句 = type=cron,cronexp=10 10* * *,script-path=https://blacknwarrior.github.io/surge/scripts/oneSay.js
 色图 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/setu.js
-今日油价 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
+今日油价 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/youjia(t).js
 黑料不打烊 = type=cron,cronexp=10 10 * * *,script-path=https://blacknwarrior.github.io/surge/scripts/hlbdy.js
 
