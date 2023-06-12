@@ -44,7 +44,7 @@ network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-
 flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
 
 # 节假日提醒
-timecard = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/timecard.js,argument=color=#16A951
+timecard = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/timecard.js
 
 显示本省实时油价
 YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
