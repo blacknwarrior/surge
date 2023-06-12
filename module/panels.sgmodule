@@ -34,13 +34,13 @@ functionstatus = type=generic, script-path=https://blacknwarrior.github.io/surge
 Sub_info = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/sub_info_panel.js,script-update-interval=0
 
 # 流量统计 点击以切换网络界面
-TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/trafficstatistics.js,argument=icon=link.icloud,icon-color=#5AC8FA
+TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/trafficstatistics.js,argument=icon=link.icloud,icon-color=#16A951
 
 # 网络详情 标题显示为根节点名
 net-info-panel = script-path=https://blacknwarrior.github.io/surge/scripts/IP-Check.js,type=generic,script-update-interval=0
 
 # flushDNS
-flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#3d3d5b
+flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
 
 # 节假日提醒
 timecard = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/timecard.js
