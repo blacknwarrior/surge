@@ -50,11 +50,11 @@ YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/sc
 timecard = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/timecard.js
 
 # Netflix+检测
-nf_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/nf_check.js
+#nf_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/nf_check.js
 # YouTube+检测
-ytb_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youtube_premium_check.js
+#ytb_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youtube_premium_check.js
 # Disney+检测
-disney_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/disney_check.js
+#disney_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/disney_check.js
 
 CNPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/CNPing.js
 
