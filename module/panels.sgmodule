@@ -37,7 +37,7 @@ Sub_info = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/s
 TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/trafficstatistics.js,argument=icon=link.icloud,icon-color=#16A951
 
 # 网络详情 标题显示为根节点名
-net-info-panel = script-path=https://blacknwarrior.github.io/surge/scripts/IP-Check.js,type=generic,script-update-interval=0
+net-info-panel = script-path=https://blacknwarrior.github.io/surge/scripts/net-info.js,type=generic,script-update-interval=0
 
 # flushDNS
 flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
