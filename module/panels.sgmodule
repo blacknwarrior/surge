@@ -12,9 +12,13 @@ NetInfoPanel=title="",content="",style=info,script-name=network-info,update-inte
 
 flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
+YJ = script-name=YJ,update-interval=43200
+
 timecard = script-name=timecard,update-interval=3600
 
-YJ = script-name=YJ,update-interval=43200
+nf_check = script-name=nf_check,title=Netflix,content=请刷新,update-interval=36000
+ytb_check = script-name=ytb_check,title=YouTube Premium,content=请刷新,update-interval=36000
+disney_check = script-name=disney_check,title=Disney+,content=请刷新,update-interval=36000
 
 CNPing = script-name=CNPing,update-interval=120
 
@@ -22,9 +26,6 @@ USPing = script-name=USPing,update-interval=120
 
 NetISP = script-name=NetISP,update-interval=-1
 
-nf_check = script-name=nf_check,title=Netflix 解锁检测,content=请刷新,update-interval=36000
-ytb_check = script-name=ytb_check,title=YouTube Premium 解锁检测,content=请刷新,update-interval=36000
-disney_check = script-name=disney_check,title=Disney+ 解锁检测,content=请刷新,update-interval=36000
 
 [Script]
 # 附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
@@ -39,15 +40,21 @@ TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.gi
 # 网络详情 标题显示为根节点名
 network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-info.js,type=generic,timeout=30
 
-
 # flushDNS
 flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
+
+显示本省实时油价
+YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
 
 # 节假日提醒
 timecard = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/timecard.js
 
-显示本省实时油价
-YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
+# Netflix+检测
+nf_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/nf_check.js
+# YouTube+检测
+ytb_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youtube_premium_check.js
+# Disney+检测
+disney_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/disney_check.js
 
 CNPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/CNPing.js
 
@@ -56,9 +63,3 @@ USPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/m
 #NetISP 面板
 NetISP = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/Netisp.js
 
-# Netflix+检测
-nf_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/nf_check.js
-# YouTube+检测
-ytb_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youtube_premium_check.js
-# Disney+检测
-disney_check = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/disney_check.js
