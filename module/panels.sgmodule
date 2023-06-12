@@ -8,7 +8,7 @@ Sub_info = script-name=Sub_info,update-interval=43200
 
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
-net-info-panel = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
+network-info = title=网络状态,content=请刷新,style=info,script-name=net-info-panel
 
 flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
@@ -37,7 +37,7 @@ Sub_info = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/s
 TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/trafficstatistics.js,argument=icon=link.icloud,icon-color=#16A951
 
 # 网络详情 标题显示为根节点名
-net-info-panel = script-path=https://blacknwarrior.github.io/surge/scripts/net-info.js,type=generic,script-update-interval=0
+network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-info.js,type=generic,timeout=30
 
 # flushDNS
 flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
