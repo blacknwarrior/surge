@@ -16,9 +16,9 @@ YJ = script-name=YJ,update-interval=43200
 
 timecard = script-name=timecard,update-interval=3600
 
-nf_check = script-name=nf_check,title=Netflix,content=请刷新,update-interval=36000
-ytb_check = script-name=ytb_check,title=YouTube Premium,content=请刷新,update-interval=36000
-disney_check = script-name=disney_check,title=Disney+,content=请刷新,update-interval=36000
+#nf_check = script-name=nf_check,title=Netflix,content=请刷新,update-interval=36000
+#ytb_check = script-name=ytb_check,title=YouTube Premium,content=请刷新,update-interval=36000
+#disney_check = script-name=disney_check,title=Disney+,content=请刷新,update-interval=36000
 
 CNPing = script-name=CNPing,update-interval=120
 
