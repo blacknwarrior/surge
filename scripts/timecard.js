@@ -81,6 +81,7 @@ function icon_now(num){
   }else{
     return "tortoise"
   }
+  "icon-color" : "#16A951"
 }
 
 /**
