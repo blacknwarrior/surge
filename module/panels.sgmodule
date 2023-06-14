@@ -20,7 +20,7 @@ CNPing = script-name=CNPing,update-interval=120
 
 USPing = script-name=USPing,update-interval=120
 
-NetISP = script-name=NetISP,update-interval=-1
+NetISP = script-name=NetISP,update-interval=43200
 
 
 [Script]
