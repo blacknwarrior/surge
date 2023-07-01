@@ -51,7 +51,6 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
         }, "");
         $done({
             title: `[今日汇率] 基准：${source[1]} ${source[0]}`,
-            title: `⏰ 更新时间：${data.date}`,
             content: `📈 汇率情况：\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
