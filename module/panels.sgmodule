@@ -54,5 +54,5 @@ USPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/m
 #NetISP 面板
 NetISP = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/Netisp.js
 
-CNYUSD = type=generic,timeout=10,script-path=https://github.com/Keywos/rule/raw/main/JS/MBcnyusd.js
+CNYUSD = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/MBcnyusd.js
 
