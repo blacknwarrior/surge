@@ -22,6 +22,8 @@ USPing = script-name=USPing,update-interval=120
 
 NetISP = script-name=NetISP,update-interval=43200
 
+CNYUSD = script-name=CNYUSD,update-interval=43200
+
 
 [Script]
 # 附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
@@ -51,4 +53,6 @@ USPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/m
 
 #NetISP 面板
 NetISP = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/Netisp.js
+
+CNYUSD = type=generic,timeout=10,script-path=https://github.com/Keywos/rule/raw/main/JS/MBcnyusd.js
 
