@@ -18,12 +18,12 @@ const digits = 5; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    USD: ["美元 (USD)", "🇺🇸"],
-    CNY: ["人民币(CNY)", "🇨🇳"],
-    HKD: ["港币 (HKD)", "🇭🇰"],
-    JPY: ["日元 (JPY)", "🇯🇵"],
-    EUR: ["欧元 (EUR)", "🇪🇺"],
-    GBP: ["英镑 (GBP)", "🇬🇧"],
+    USD: ["USD", "🇺🇸"],
+    CNY: ["CNY", "🇨🇳"],
+    HKD: ["HKD", "🇭🇰"],
+    JPY: ["JPY", "🇯🇵"],
+    EUR: ["EUR", "🇪🇺"],
+    GBP: ["GBP", "🇬🇧"],
 };
 
 
@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}=${roundNumber(rate, digits)}${
+                    line = `${target[1]} 1${source[0]}/${roundNumber(rate, digits)}${
                         target[0]
                     }\n`;
                 } else {
-                    line = `${target[1]} 1${source[0]}=${roundNumber(rate, digits)}${
+                    line = `${target[1]} 1${source[0]}/${roundNumber(rate, digits)}${
                         target[0]
                     }\n`;
                 }
@@ -50,8 +50,8 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `[今日汇率] 基准：${source[1]} ${source[0]}    ⏰ 更新时间：${data.date}`,
-            content: `📈 汇率情况：\n${info}`,
+            title: `[Today's Exchange Rate] Benchmark：${source[1]} ${source[0]}    ⏰ update time：${data.date}`,
+            content: `📈 exchange：\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
         })
