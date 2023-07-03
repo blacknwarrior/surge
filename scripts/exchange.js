@@ -50,8 +50,8 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `[Today's Exchange Rate] Benchmark：${source[1]} ${source[0]}    ⏰ update time：${data.date}`,
-            content: `📈 exchange：\n${info}`,
+            title: `[Today's Exchange Rate] Benchmark：${source[1]} ${source[0]}    🕗 update time：${data.date}`,
+            content: `💲 exchange：\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
         })
