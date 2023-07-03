@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `$${source[1]}${source[0]}/${target[0]}${target[1]}  ${
+                    line = `${source[1]}${source[0]}/${target[1]}${target[0]}  ${
                         roundNumber(rate, digits)
                     }\n`;
                 } else {
-                    line = `${source[1]}${source[0]}/${target[0]}${target[1]} ${
+                    line = `${source[1]}${source[0]}/${target[1]}${target[0]} ${
                         roundNumber(rate, digits)
                     }\n`;
                 }
@@ -50,7 +50,7 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `💲Exchange rates benchmark：${source[1]} ${source[0]}`,
+            title: `💲Exchange rates benchmark：${source[1]}${source[0]}`,
             content: `\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
