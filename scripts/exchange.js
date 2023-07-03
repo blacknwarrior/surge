@@ -50,8 +50,8 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `💲𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆 𝗘𝘅𝗰𝗵𝗮𝗻𝗴𝗲 𝗥𝗮𝘁𝗲𝘀 ${source[0]}  ${data.date}`,
-            content: `\n${info}`,
+            title: `💱𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆 𝗘𝘅𝗰𝗵𝗮𝗻𝗴𝗲 𝗥𝗮𝘁𝗲𝘀 ${source[0]}  ⏰ 更新时间：${data.date}`,
+            content: `📈 汇率情况：\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
         })
