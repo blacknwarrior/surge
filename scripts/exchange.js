@@ -21,9 +21,9 @@ const currencyNames = {
     USD: ["USD", "🇺🇸"],
     CNY: ["CNY", "🇨🇳"],
     HKD: ["HKD", "🇭🇰"],
-    JPY: ["JPY", "🇯🇵"],
     EUR: ["EUR", "🇪🇺"],
     GBP: ["GBP", "🇬🇧"],
+    JPY: ["JPY", "🇯🇵"],
 };
 
 
@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${source[0]}/${target[0]}     ${
+                    line = `${source[0]}/${target[0]}     Market Rate${
                         roundNumber(rate, digits)
                     }\n`;
                 } else {
-                    line = `${source[0]}/${target[0]}     ${
+                    line = `${source[0]}/${target[0]}     Market Rate${
                         roundNumber(rate, digits)
                     }\n`;
                 }
@@ -50,7 +50,7 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `💲Exchange ${source[0]} ⏰ Update time: ${data.date}`,
+            title: `💲Exchange ${source[0]}  ${data.date}`,
             content: `\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
