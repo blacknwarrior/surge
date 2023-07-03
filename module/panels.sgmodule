@@ -2,27 +2,27 @@
 #!desc=信息面板
 
 [Panel]
-functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=60
+#functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=60
 
-Sub_info = script-name=Sub_info,update-interval=43200
+#Sub_info = script-name=Sub_info,update-interval=43200
 
-TrafficStatistics = script-name=TrafficStatistics,update-interval=1
+#TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
-NetInfoPanel=title="",content="",style=info,script-name=network-info,update-interval=1
+#NetInfoPanel=title="",content="",style=info,script-name=network-info,update-interval=1
 
-flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
+#flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
 CurrencyExchange Rates = script-name=CurrencyExchange Rates,update-interval=43200
 
-YJ = script-name=YJ,update-interval=43200
+#YJ = script-name=YJ,update-interval=43200
 
-timecard = script-name=timecard,update-interval=3600
+#timecard = script-name=timecard,update-interval=3600
 
-CNPing = script-name=CNPing,update-interval=120
+#CNPing = script-name=CNPing,update-interval=120
 
-USPing = script-name=USPing,update-interval=120
+#USPing = script-name=USPing,update-interval=120
 
-NetISP = script-name=NetISP,update-interval=43200
+#NetISP = script-name=NetISP,update-interval=43200
 
 
 
