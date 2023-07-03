@@ -12,22 +12,18 @@ const digits = 2; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-
-CNY: ["人民币", "🇨🇳"],
-USD: ["美元", "🇺🇸"],
-GBP: ["英镑", "🇬🇧"],
-MYR: ["马来", "🇲🇾"], //马来西亚
-EUR: ["欧元", "🇪🇺"],
-HKD: ["港币", "🇭🇰"],
-JPY: ["日元", "🇯🇵"],
-KRW: ["韩元", "🇰🇷"],
-TRY: ["里拉", "🇹🇷"],
-PHP: ["菲律宾", "🇵🇭"], //菲律宾
+ 
+    USD: ["USD", "🇺🇸"],
+    CNY: ["CNY", "🇨🇳"],
+    HKD: ["HKD", "🇭🇰"],
+    JPY: ["JPY", "🇯🇵"],
+    EUR: ["EUR", "🇪🇺"],
+    GBP: ["GBP", "🇬🇧"],
 
 };
 //.toString().padEnd(8, " ")
 $.http.get({
-    url: "https://api.exchangerate-api.com/v4/latest/CNY"
+    url: "https://api.fer.ee/latest?base=USD"
 })
     .then((response) => {
         const data = JSON.parse(response.body);
@@ -39,15 +35,15 @@ $.http.get({
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}\t${target[0]}: ${roundNumber(rate, digits)}\n`;
+                    line = `${target[1]} ${source[0]}\t${target[0]}: ${roundNumber(rate, digits)}\n`;
                 } else {
-                    line = `${target[1]} 1${target[0]}   \tCNY: ${roundNumber(1 / rate, digits)}\n`;
+                    line = `${target[1]} ${source[0]}\t${target[0]}: ${roundNumber(rate, digits)}\n`;
                 }
             }
             return accumulator + line;
         }, "");
         $done({
-            title: data.date,
+            title: ⏰ 更新时间：data.date,
             content: `${info.replace(/\n$/g, "")}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
