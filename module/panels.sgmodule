@@ -12,7 +12,7 @@ NetInfoPanel=title="",content="",style=info,script-name=network-info,update-inte
 
 flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
-CurrencyExchange Rates = script-name=CNYUSD,update-interval=43200
+CurrencyExchange Rates = script-name=CurrencyExchange Rates,update-interval=43200
 
 YJ = script-name=YJ,update-interval=43200
 
