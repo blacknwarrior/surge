@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} 1${source[0]}/t${target[0]}: ${
+                    line = `${source[0]}/${target[0]}  ${
                         roundNumber(rate, digits)
                     }\n`;
                 } else {
-                    line = `${target[1]} 1${source[0]}/t${target[0]}: ${
+                    line = `${source[0]}/${target[0]}  ${
                         roundNumber(rate, digits)
                     }\n`;
                 }
@@ -50,7 +50,7 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `[今日汇率] 基准：${source[1]} ${source[0]}`,
+            title: `[今日汇率] 基准：${source[0]}`,
             content: `💲 exchange：\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
