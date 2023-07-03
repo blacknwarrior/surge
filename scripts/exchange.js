@@ -50,7 +50,7 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `💲Exchange ${source[0]} ⏰ Update time: ${data.date}``,
+            title: `💲Exchange ${source[0]} ⏰ Update time: ${data.date}`,
             content: `\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
