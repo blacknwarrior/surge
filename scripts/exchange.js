@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]}${source[0]}/${target[0]}  ${
+                    line = `$${source[1]}${source[0]}/${target[0]}${target[1]}  ${
                         roundNumber(rate, digits)
                     }\n`;
                 } else {
-                    line = `${target[1]}${source[0]}/${target[0]}  ${
+                    line = `${source[1]}${source[0]}/${target[0]}${target[1]} ${
                         roundNumber(rate, digits)
                     }\n`;
                 }
