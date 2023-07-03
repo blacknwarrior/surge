@@ -1,33 +1,34 @@
-/*
- * 监控汇率变化, @Key 改了下面板格式 2023-07-01 12:05:42
+/* 监控汇率变化,@Peng-YM @chxm1023
+ * @Key 改了下面板格式 2023-07-01 15:29:42
+ 
 [Panel]
-CurrencyExchange Rates = script-name=CNYUSD,update-interval=43200
+CNYUSD = script-name=CNYUSD,update-interval=43200
 [Script]
-CurrencyExchange Rates = type=generic,timeout=10,script-path=https://github.com/Keywos/rule/raw/main/JS/MBcnyusd.js
- * @author: Peng-YM
- * @Alter: chxm1023
- * 更新地址：https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js
- * 配置方法：
- * 1. 设置基准货币，默认人民币(CNY)。
- * 2. 设置保留几位小数。
- * @update ：YangZhaocool
+CNYUSD = type=generic,timeout=10,script-path=https://github.com/Keywos/rule/raw/main/JS/MBcnyusd.js
  */
 
-const base = "USD"; // 基准货币，可以改成其他币种
-const digits = 5; // 保留几位有效数字
+const base = "CNY"; // 基准货币，可以改成其他币种
+const digits = 2; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    USD: ["USD", "🇺🇸"],
-    CNY: ["CNY", "🇨🇳"],
-    HKD: ["HKD", "🇭🇰"],
-    JPY: ["JPY", "🇯🇵"],
-    EUR: ["EUR", "🇪🇺"],
-    GBP: ["GBP", "🇬🇧"],
+
+CNY: ["人民币", "🇨🇳"],
+USD: ["美元", "🇺🇸"],
+GBP: ["英镑", "🇬🇧"],
+MYR: ["马来", "🇲🇾"], //马来西亚
+EUR: ["欧元", "🇪🇺"],
+HKD: ["港币", "🇭🇰"],
+JPY: ["日元", "🇯🇵"],
+KRW: ["韩元", "🇰🇷"],
+TRY: ["里拉", "🇹🇷"],
+PHP: ["菲律宾", "🇵🇭"], //菲律宾
+
 };
-
-
-$.http.get({url: "https://api.fer.ee/latest?base=USD"})
+//.toString().padEnd(8, " ")
+$.http.get({
+    url: "https://api.exchangerate-api.com/v4/latest/CNY"
+})
     .then((response) => {
         const data = JSON.parse(response.body);
         const source = currencyNames[base];
@@ -38,20 +39,16 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${target[1]} ${source[0]}/${roundNumber(rate, digits)}${
-                        target[0]
-                    }\n`;
+                    line = `${target[1]} 1${source[0]}\t${target[0]}: ${roundNumber(rate, digits)}\n`;
                 } else {
-                    line = `${target[1]} ${source[0]}/${roundNumber(rate, digits)}${
-                        target[0]
-                    }\n`;
+                    line = `${target[1]} 1${target[0]}   \tCNY: ${roundNumber(1 / rate, digits)}\n`;
                 }
             }
             return accumulator + line;
         }, "");
         $done({
             title: data.date,
-            content: `💲 exchange：\n${info}`,
+            content: `${info.replace(/\n$/g, "")}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
         })
