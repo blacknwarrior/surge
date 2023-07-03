@@ -18,12 +18,12 @@ const digits = 5; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    USD: ["USD"],
-    CNY: ["CNY"],
-    HKD: ["HKD"],
-    JPY: ["JPY"],
-    EUR: ["EUR"],
-    GBP: ["GBP"],
+    USD: ["USD", "🇺🇸"],
+    CNY: ["CNY", "🇨🇳"],
+    HKD: ["HKD", "🇭🇰"],
+    JPY: ["JPY", "🇯🇵"],
+    EUR: ["EUR", "🇪🇺"],
+    GBP: ["GBP", "🇬🇧"],
 };
 
 
@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${source[0]}/${target[0]}  ${
+                    line = `${target[1]}${source[0]}/${target[0]}  ${
                         roundNumber(rate, digits)
                     }\n`;
                 } else {
-                    line = `${source[0]}/${target[0]}  ${
+                    line = `${target[1]}${source[0]}/${target[0]}  ${
                         roundNumber(rate, digits)
                     }\n`;
                 }
@@ -50,8 +50,8 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `[今日汇率] 基准：${source[0]}`,
-            content: `💲 exchange：\n${info}`,
+            title: `💲Exchange rates benchmark：${source[1]} ${source[0]}`,
+            content: `\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
         })
