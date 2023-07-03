@@ -43,7 +43,7 @@ $.http.get({
             return accumulator + line;
         }, "");
         $done({
-            title: ⏰ 更新时间：data.date,
+            title: data.date,
             content: `${info.replace(/\n$/g, "")}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
