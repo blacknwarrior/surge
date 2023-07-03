@@ -12,6 +12,8 @@ NetInfoPanel=title="",content="",style=info,script-name=network-info,update-inte
 
 flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
+CurrencyExchange Rates = script-name=CNYUSD,update-interval=43200
+
 YJ = script-name=YJ,update-interval=43200
 
 timecard = script-name=timecard,update-interval=3600
@@ -22,7 +24,7 @@ USPing = script-name=USPing,update-interval=120
 
 NetISP = script-name=NetISP,update-interval=43200
 
-CNYUSD = script-name=CNYUSD,update-interval=43200
+
 
 
 [Script]
@@ -41,7 +43,10 @@ network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-
 # flushDNS
 flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
 
-显示本省实时油价
+#货币汇率
+CurrencyExchange Rates = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
+
+#显示本省实时油价
 YJ = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/youjia.js
 
 # 节假日提醒
@@ -54,5 +59,5 @@ USPing = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/m
 #NetISP 面板
 NetISP = type=generic,timeout=5,script-path=https://github.com/Keywos/rule/raw/main/JS/Netisp.js
 
-CNYUSD = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/MBcnyusd.js
+
 
