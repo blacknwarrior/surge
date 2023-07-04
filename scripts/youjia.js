@@ -94,10 +94,10 @@ $httpClient.get(
             }
             else {
                 body = {
-                    title: "实时油价信息",
+                    title: "Real-time oil price information",
                     content: `${prices[0].name}  ${prices[0].value}\n${prices[1].name}  ${prices[1].value}\n${prices[2].name}  ${prices[2].value}\n${prices[3].name}  ${prices[3].value}\n${friendly_tips}`,
                     icon: "fuelpump.fill",
-                    "icon-color" : "#16A951"
+                    "icon-color" : "#FFD700"
                 }
 
                 $done(body);
