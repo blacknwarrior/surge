@@ -1,9 +1,9 @@
 /*
  * 监控汇率变化, @Key 改了下面板格式 2023-07-01 12:05:42
 [Panel]
-CurrencyExchange Rates = script-name=CNYUSD,update-interval=43200
+Currency Exchange Rates = script-name=Currency Exchange Rates,update-interval=43200
 [Script]
-CurrencyExchange Rates = type=generic,timeout=10,script-path=https://github.com/Keywos/rule/raw/main/JS/MBcnyusd.js
+Currency Exchange Rates = type=generic,timeout=10,script-path=https://github.com/Keywos/rule/raw/main/JS/MBcnyusd.js
  * @author: Peng-YM
  * @Alter: chxm1023
  * 更新地址：https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js
