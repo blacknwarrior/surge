@@ -55,10 +55,10 @@ if(net=="en0") {
 
 
   $done({
-      title:"流量统计 | "+netType,
-      content:`流量 ➟ ${upload} | ${download}\n`+
-      `速度 ➟ ${outCurrentSpeed} | ${inCurrentSpeed}\n` +
-		`峰值 ➟ ${outMaxSpeed} | ${inMaxSpeed}`,
+      title:"Traffic Statistics | "+netType,
+      content:`Flow ➟ ${upload} | ${download}\n`+
+      `Speed ➟ ${outCurrentSpeed} | ${inCurrentSpeed}\n` +
+		`The Peak ➟ ${outMaxSpeed} | ${inMaxSpeed}`,
 		icon: params.icon,
 		  "icon-color":params.color
     });
