@@ -35,7 +35,7 @@ functionstatus = type=generic, script-path=https://blacknwarrior.github.io/surge
 Sub_info = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/sub_info_panel.js,script-update-interval=0
 
 # 流量统计 点击以切换网络界面
-TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/trafficstatistics.js,argument=icon=link.icloud&color=#16A951
+TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/trafficstatistics.js,argument=icon=link.icloud&color=#FFD700
 
 # 网络详情 标题显示为根节点名
 network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-info.js,type=generic,timeout=30
