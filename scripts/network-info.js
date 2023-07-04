@@ -179,10 +179,10 @@ function getIP() {
   if (!v4 && !v6) {
     info = ['网路可能中断', '请手动刷新以重新获取 IP'];
   } else {
-    if (v4?.primaryAddress) info.push(`设备IP：${v4?.primaryAddress}`);
-    if (v6?.primaryAddress) info.push(`IPv6地址：已分配`);
-    if (v4?.primaryRouter && getSSID()) info.push(`路由器IP：${v4?.primaryRouter}`);
-    if (v6?.primaryRouter && getSSID()) info.push(`IPv6地址：已分配`);
+    if (v4?.primaryAddress) info.push(`Device IP：${v4?.primaryAddress}`);
+    if (v6?.primaryAddress) info.push(`IPv6 Address：Assigned`);
+    if (v4?.primaryRouter && getSSID()) info.push(`Router IP：${v4?.primaryRouter}`);
+    if (v6?.primaryRouter && getSSID()) info.push(`IPv6 Address：Assigned`);
   }
   info = info.join("\n");
   return info + "\n";
@@ -204,11 +204,11 @@ function getNetworkInfo(retryTimes = 5, retryInterval = 1000) {
       title: getSSID() ?? getCellularInfo(),
       content:
         getIP() +
-        `节点IP：${info.query}\n` +
-        `节点ISP：${info.isp}\n` +
-        `节点位置：${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city}`,
+        `Node IP：${info.query}\n` +
+        `Node ISP：${info.isp}\n` +
+        `Node Location：${getFlagEmoji(info.countryCode)} | ${info.country} - ${info.city}`,
       icon: getSSID() ? 'wifi' : 'simcard',
-      'icon-color': getSSID() ? '#16A951' : '#f48220',
+      'icon-color': getSSID() ? '#FFD700' : '#f48220',
     });
   }).catch(error => {
     // 网络切换
