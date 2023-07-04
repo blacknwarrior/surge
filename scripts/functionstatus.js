@@ -19,7 +19,7 @@ $done({
     title:"Surge  has been run"+startTime,
     content:"Mitm:"+icon_status(mitm_status.enabled)+"  Rewrite:"+icon_status(rewrite_status.enabled)+"  Scripting:"+icon_status(scripting_status.enabled),
     icon: icon_s?"checkmark.seal":"exclamationmark.triangle",
-   "icon-color":icon_s?"##FFD700":"#FF7500"
+   "icon-color":icon_s?"#FFD700":"#FF7500"
 });
 })();
 function icon_status(status){
