@@ -16,7 +16,7 @@ if ($trigger == "button") {
 	$notification.post("configuration overload","Configuration reload succeeded","")
 };
 $done({
-    title:"Surge  has been run"+startTime,
+    title:"Surge  "+startTime+" running",
     content:"Mitm:"+icon_status(mitm_status.enabled)+"  Rewrite:"+icon_status(rewrite_status.enabled)+"  Scripting:"+icon_status(scripting_status.enabled),
     icon: icon_s?"checkmark.seal":"exclamationmark.triangle",
    "icon-color":icon_s?"#FFD700":"#FF7500"
@@ -43,12 +43,12 @@ let seconds=Math.round(leave3/1000)
 
 if(days==0){
   if(hours==0){
-    if(minutes==0)return(`${seconds}S`);
-      return(`${minutes}M${seconds}S`)
+    if(minutes==0)return(`${seconds}s`);
+      return(`${minutes}m${seconds}s`)
     }
-    return(`${hours}H${minutes}M${seconds}S`)
+    return(`${hours}h${minutes}m${seconds}s`)
   }else {
-        return(`${days}T${hours}M${minutes}S`)
+        return(`${days}d${hours}m${minutes}s`)
 	}
 }
 function httpAPI(path = "", method = "POST", body = null) {
