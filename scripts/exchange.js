@@ -29,7 +29,7 @@ const currencyNames = {
 };
 
 
-$.http.get({url: "https://api.exchangerate-api.com/v4/latest/CNY"})
+$.http.get({url: "https://api.fer.ee/latest?base=USD"})
     .then((response) => {
         const data = JSON.parse(response.body);
         const source = currencyNames[base];
@@ -52,10 +52,10 @@ $.http.get({url: "https://api.exchangerate-api.com/v4/latest/CNY"})
             return accumulator + line;
         }, "");
         $done({
-            title: `💲𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆 𝗘𝘅𝗰𝗵𝗮𝗻𝗴𝗲 𝗥𝗮𝘁𝗲𝘀            Base:${source[0]}  TIME (EDT): ${data.date}`,
+            title: `💲𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆 𝗘𝘅𝗰𝗵𝗮𝗻𝗴𝗲 𝗥𝗮𝘁𝗲𝘀            BASE:${source[0]}  TIME (EDT): ${data.date}`,
             content: `\n${info}`,
-            icon: 'dollarsign.square',
-            'icon-color': '#9999FF'
+            icon: 'dollarsign.circle.fill',
+            'icon-color': '#FFD700'
         })
     })
     .then(() => $.done());
