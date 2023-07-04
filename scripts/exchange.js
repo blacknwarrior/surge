@@ -14,7 +14,7 @@ CurrencyExchange Rates = type=generic,timeout=10,script-path=https://github.com/
  */
 
 const base = "USD"; // 基准货币，可以改成其他币种
-const digits = 5; // 保留几位有效数字
+const digits = 4; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
@@ -38,11 +38,11 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
                 const rate = parseFloat(data.rates[key]);
                 const target = currencyNames[key];
                 if (rate > 1) {
-                    line = `${source[0]}/${target[0]}          VALUE  ${
+                    line = `${source[0]}/${target[0]}          ${
                         roundNumber(rate, digits)
                     }\n`;
                 } else {
-                    line = `${source[0]}/${target[0]}          VALUE  ${
+                    line = `${source[0]}/${target[0]}          ${
                         roundNumber(rate, digits)
                     }\n`;
                 }
@@ -50,7 +50,7 @@ $.http.get({url: "https://api.fer.ee/latest?base=USD"})
             return accumulator + line;
         }, "");
         $done({
-            title: `💲𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆 𝗘𝘅𝗰𝗵𝗮𝗻𝗴𝗲 𝗥𝗮𝘁𝗲𝘀             [CURRENCY]${source[0]}  ⏰TIME (EDT) ${data.date}`,
+            title: `💲𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆 𝗘𝘅𝗰𝗵𝗮𝗻𝗴𝗲 𝗥𝗮𝘁𝗲𝘀            Base:${source[0]}  TIME (EDT): ${data.date}`,
             content: `\n${info}`,
             icon: 'dollarsign.square',
             'icon-color': '#9999FF'
