@@ -41,7 +41,7 @@ TrafficStatistics = type=generic,timeout=10,script-path=https://blacknwarrior.gi
 network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-info.js,type=generic,timeout=30
 
 # flushDNS
-flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#16A951
+flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#FFD700
 
 #货币汇率
 Currency Exchange Rates = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
