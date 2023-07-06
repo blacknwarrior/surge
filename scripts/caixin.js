@@ -1,10 +1,10 @@
-/*
-脚本作者：R·E
-支持版本：商店最新 7.9.8
-下载地址：https://apps.apple.com/us/app/%E8%B4%A2%E6%96%B0-%E6%B5%81%E8%A8%80%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8-%E7%9C%9F%E7%9B%B8%E5%B0%B1%E8%AF%BB%E8%B4%A2%E6%96%B0/id356023612
-更新时间：2022.11.04
-使用声明：⚠️⚠️⚠️此脚本仅供学习与交流，禁止转载与贩卖！⚠️⚠️⚠️
-*/
-var _0x177f40=$request['headers'];_0x177f40['User-Agent']='Mozilla/5.0\x20(iPhone;\x20CPU\x20iPhone\x20OS\x2015_4_1\x20like\x20Mac\x20OS\x20X)\x20AppleWebKit/605.1.15\x20(KHTML,\x20like\x20Gecko)\x20Mobile/15E148\x20CaixinV5/7.9.3\x20deviceType/1';const _0x4726b2=$request['url']['replace'](/uid=(\d+|)/g,'uid=12902696')['replace'](/code=(\w+|)/g,'code=B6474DF32B08043A0D3DD98A06A2F7C5')['replace'](/device=(\w+|)/g,'device=a94f59ba6420704c814c9f9e30bb47f328d2452a')['replace'](/deviceType=(\d+|)/g,'deviceType=1');if($request['url']['indexOf']('validateAudioAuth')!=-0x1){_0x177f40['appinfo']='75SU0e5TW70SSqRtJ/F6dN60qhTR/VmZTj9JQB4m3Uwq7sM2Mqb98OoOmr%2BJGjxMer45axESuqqrtjbo%2Bm5AYRzduI5eFvoYMcmS35ifWwfGXmPy6G3ZfPagiTWEn%2BM%2BPAUiArgEuqyBgwc3OMuvj5jYaliJKDZ6LuUieXHIFRTu/7a7DCFvIxZFQkeQjA4dDHXMWIqoT1Vx7k7vkaRp7rVdzSUSO5SaMvFbYOY1VWBz8n8d4JbNklAPNWS7sjK3umhjWq70j8MbjSCItzxFw88h49NsDs8fH47fALaZvQR63FgsF/Ab0HP46n/5Q0sDF2C9WTk/r6tIh/Rg%2BMTQZVSYimZ6XctG8QciSjRKgNs/xQUwYap6FnT2XT6QNtNzdutTVUUH43crJm51OyLzYC66vdKsBdZQAT5SRD9TLgA41tQIv/ixuxeSREnoZVBoVFTe2PIQ2IdmbE12Hjz8F38ZIgJbXNKzysRQwi7RRhrc9fGcRRcUQYFW0nCxMl/SkT42OtjQklw%3D';}$done({'url':_0x4726b2,'headers':_0x177f40});
+/******************************************
+@Zoo
+财新解锁财新v2文章
+日期:2023.06.22
+[rewrite_local]
+^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth|groupImageValidate) url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Script/main/caixin.js
+hostname = gateway.caixin.com
+*******************************************/
 
-
+function _0x16a4(_0x5a5215,_0xe6beba){const _0x3a1408=_0x1913();return _0x16a4=function(_0x53cbfc,_0x2a19b6){_0x53cbfc=_0x53cbfc-(0x14f0+-0x843+-0x95*0x15);let _0x501a74=_0x3a1408[_0x53cbfc];return _0x501a74;},_0x16a4(_0x5a5215,_0xe6beba);}const _0x28ca1d=_0x16a4;function _0x1913(){const _0x46925f=['a8bad013f6','e9db1e1c32','f5f2393c4f','123630qUkkLi','56sHTbWK','169616FNawMB','url','1902904vyJXTN','21588qGiGcz','e275688','257826XPczMR','replace','device=b04','21XPGlII','542388dTTJvd','3267621WtQldy'];_0x1913=function(){return _0x46925f;};return _0x1913();}(function(_0x16a3c8,_0x298de5){const _0x1d4b0c=_0x16a4,_0x51f91f=_0x16a3c8();while(!![]){try{const _0x3bafda=parseInt(_0x1d4b0c(0x74))/(0x28c+-0x7c7+0x53c)+parseInt(_0x1d4b0c(0x83))/(0x84d+0xcf0+-0x153b)*(-parseInt(_0x1d4b0c(0x77))/(-0x7*-0x1b9+0x1074+-0x1*0x1c80))+parseInt(_0x1d4b0c(0x7d))/(0x1c4b+0x185a+-0x34a1)+parseInt(_0x1d4b0c(0x82))/(0x3*-0x1+-0x105*-0x1+-0xfd*0x1)+parseInt(_0x1d4b0c(0x79))/(0x1*0x1b2d+0x3*-0x7b5+-0x408)*(-parseInt(_0x1d4b0c(0x7c))/(0x1b5f+0x6d3+0x1*-0x222b))+-parseInt(_0x1d4b0c(0x76))/(0x26fe+0x228e+0x2*-0x24c2)+parseInt(_0x1d4b0c(0x7e))/(0x8e2+0x2672+0x1*-0x2f4b);if(_0x3bafda===_0x298de5)break;else _0x51f91f['push'](_0x51f91f['shift']());}catch(_0x2626b7){_0x51f91f['push'](_0x51f91f['shift']());}}}(_0x1913,-0x34495+-0x19076+0x6bc53));const Caixin=$request[_0x28ca1d(0x75)][_0x28ca1d(0x7a)](/device=(\w+|)/g,_0x28ca1d(0x7b)+_0x28ca1d(0x7f)+_0x28ca1d(0x81)+_0x28ca1d(0x80)+_0x28ca1d(0x78));$done({'url':Caixin});
