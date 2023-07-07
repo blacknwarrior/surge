@@ -23,8 +23,8 @@ const currencyNames = {
     HKD: ["HKD", "🇭🇰"], //港币
     EUR: ["EUR", "🇪🇺"], //欧元
     GBP: ["GBP", "🇬🇧"], //英镑
-    KRW: ["KRW", "🇰🇷"], //韩元
     JPY: ["JPY", "🇯🇵"], //日元
+    KRW: ["KRW", "🇰🇷"], //韩元
     TRY: ["TRY", "🇹🇷"], //土耳其里拉
 };
 
