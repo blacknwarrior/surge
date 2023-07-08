@@ -48,7 +48,7 @@ if(days==0){
     }
     return(`${hours}hr${minutes}min${seconds}sec`)
   }else {
-        return(`${days}dd${hours}min${minutes}sec`)
+        return(`${days}dd${hours}hr${minutes}min`)
 	}
 }
 function httpAPI(path = "", method = "POST", body = null) {
