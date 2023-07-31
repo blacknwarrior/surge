@@ -12,6 +12,8 @@ NetInfoPanel=title="",content="",style=info,script-name=network-info,update-inte
 
 flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
+weather=script-name=weather,update-interval=3600
+
 Currency Exchange Rates = script-name=Currency Exchange Rates,update-interval=43200
 
 YJ = script-name=YJ,update-interval=43200
@@ -42,6 +44,8 @@ network-info =script-path=https://blacknwarrior.github.io/surge/scripts/network-
 
 # flushDNS
 flushDNS = type=generic,timeout=5,script-path=https://blacknwarrior.github.io/surge/scripts/flushDNS.js,argument=title=DNS FLush&icon=wand.and.stars.inverse&color=#FFD700
+
+weather=type=generic,script-path=https://blacknwarrior.github.io/surge/scripts/weather.js,argument=icon=sun.max.fill&color=#FFD700&cityId=101280800
 
 #货币汇率
 Currency Exchange Rates = type=generic,timeout=10,script-path=https://blacknwarrior.github.io/surge/scripts/exchange.js
