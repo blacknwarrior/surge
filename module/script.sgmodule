@@ -52,4 +52,4 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,m
 
 
 [MITM]
-hostname = %INSERT% *.wikipedia.org,*.wikiwand.com, app.biliintl.com, mp.weixin.qq.com, ap?.bili*i.com, ap?.bili*i.net, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, ipadcms.caixin.com, gateway.caixin.com, api.bilibili.com
+hostname = %INSERT% *.wikipedia.org,*.wikiwand.com, app.biliintl.com, mp.weixin.qq.com
