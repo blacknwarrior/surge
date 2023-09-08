@@ -18,8 +18,8 @@ const digits = 4; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    USD: ["USD", "🇺🇸"], //美元
-    CNY: ["CNY", "🇨🇳"], //人民币
+    U.S.Dollar: ["USD", "🇺🇸"], //美元
+    Chinese Yuan: ["CNY", "🇨🇳"], //人民币
     HKD: ["HKD", "🇭🇰"], //港币
     EUR: ["EUR", "🇪🇺"], //欧元
     GBP: ["GBP", "🇬🇧"], //英镑
