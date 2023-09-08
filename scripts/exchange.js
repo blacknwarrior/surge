@@ -13,7 +13,7 @@ Currency Exchange Rates = type=generic,timeout=10,script-path=https://github.com
  * @update ：YangZhaocool
  */
 
-const base = "USD"; // 基准货币，可以改成其他币种
+const base = "U.S.Dollar"; // 基准货币，可以改成其他币种
 const digits = 4; // 保留几位有效数字
 
 const $ = API("exchange");
